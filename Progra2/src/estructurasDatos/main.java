@@ -23,7 +23,7 @@ public class main {
                     case 1:
                         dato = JOptionPane.showInputDialog(null, "Ingrese el dato que desea agregar",
                                 "Agregando", JOptionPane.QUESTION_MESSAGE);
-                        cola1.agregar(dato);
+                        cola1.agregar(new datosCliente("Ariel", "a@gmail.com", "D", "P"));
                         break;
                         
                 }
