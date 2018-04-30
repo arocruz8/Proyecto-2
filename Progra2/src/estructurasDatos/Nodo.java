@@ -3,6 +3,7 @@ package estructurasDatos;
 public class Nodo {
     Object dato;
     Nodo next;
+    String prioridad;
     
     public Nodo(Object dato){
         this.dato=dato;
@@ -25,5 +26,12 @@ public class Nodo {
         this.next = next;
     }
     
+    public String getPrioridad(){
+        return prioridad;
+    }
+    
+    public void setPriorida(String prioridad){
+        this.prioridad=prioridad;
+    }
     
 }
