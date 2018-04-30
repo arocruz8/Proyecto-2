@@ -30,7 +30,7 @@ public class Nodo {
         return prioridad;
     }
     
-    public void setPriorida(String prioridad){
+    public void setPrioridad(String prioridad){
         this.prioridad=prioridad;
     }
     
