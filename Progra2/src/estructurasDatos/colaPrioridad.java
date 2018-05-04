@@ -1,7 +1,6 @@
 package estructurasDatos;
-    public class colaPrioridad<T>{
-	
-	private Nodo<T> inicio;
+    public class colaPrioridad<cliente>{
+	private Nodo<cliente> inicio;
 	private static int size = 0;
 
 	public colaPrioridad(){
@@ -19,10 +18,11 @@ package estructurasDatos;
 	public static int getsize(){
 	    return size;
 	}
-
-	public Nodo<T> enqueue(T t){
-	    Nodo<T> nuevo = new Nodo<>(t);
-	    Nodo<T> aux;
+        
+        //agrega
+	public Nodo<cliente> enqueue(cliente t){
+	    Nodo<cliente> nuevo = new Nodo<>(t);
+	    Nodo<cliente> aux;
 	    if (esVacia()) {
 	        inicio = nuevo;
 	    }else {
@@ -37,7 +37,8 @@ package estructurasDatos;
 	    size++;
 	    return nuevo;
 	}
-
+        
+        //elimina en la cola
 	public void dequeue(){
 		if (!esVacia()) {
 			System.out.println("Dequeue... Value:"+inicio.getDato());
@@ -54,8 +55,9 @@ package estructurasDatos;
 	    }
 	}
 	
-	public boolean buscar(T referencia){
-	    Nodo<T> aux = inicio;
+        //busca en la cola
+	public boolean buscar(cliente referencia){
+	    Nodo<cliente> aux = inicio;
 	    boolean existe = false;
 	    while(existe != true && aux != null){
 	        if (referencia == aux.getDato()) {
@@ -68,8 +70,9 @@ package estructurasDatos;
 	    return existe;
 	}
 	
+        //muestra en consola
 	public void imprimir(){
-	    Nodo<T> aux = inicio;
+	    Nodo<cliente> aux = inicio;
 		System.out.println("\nCola :");
 	    while(aux != null){
 	        System.out.println("¡_" + aux.getDato() + "_¡");

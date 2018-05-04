@@ -1,31 +1,31 @@
 
 package estructurasDatos;
-public class Nodo<T> {
+public class Nodo<cliente> {
     
-    private T dato;
-    private Nodo<T> siguiente;
+    private cliente dato;
+    private Nodo<cliente> siguiente;
 
     public Nodo(){
         siguiente=null;
      }
-    public Nodo(T p){
+    public Nodo(cliente p){
         siguiente=null;
         dato = p;
     }  
-    public Nodo(T t, Nodo<T> siguiente){
+    public Nodo(cliente t, Nodo<cliente> siguiente){
         this.siguiente=siguiente;
         dato = t;
     }     
-    public T getDato() {
+    public cliente getDato() {
         return dato;
     } 
-    public void setDato(T dato) {
+    public void setDato(cliente dato) {
         this.dato = dato;
     }
-    public Nodo<T> getSiguiente() {
+    public Nodo<cliente> getSiguiente() {
         return siguiente;
     }
-    public void setSiguiente(Nodo<T> siguiente) {
+    public void setSiguiente(Nodo<cliente> siguiente) {
         this.siguiente = siguiente;
     }     
 }
