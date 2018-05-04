@@ -46,9 +46,9 @@ public class colaPrioridad {
         return this.tamaño;
     }*/
     
-    public class colaPrioridad<T>{
+    public class colaPrioridad<cliente>{
 	
-	private Nodo<T> inicio;
+	private Nodo<cliente> inicio;
 	private static int size = 0;
 
 	public colaPrioridad(){
@@ -66,10 +66,11 @@ public class colaPrioridad {
 	public static int getsize(){
 	    return size;
 	}
-
-	public Nodo<T> enqueue(T t){
-	    Nodo<T> nuevo = new Nodo<>(t);
-	    Nodo<T> aux;
+        
+        //agregar
+	public Nodo<cliente> enqueue(cliente t){
+	    Nodo<cliente> nuevo = new Nodo<>(t);
+	    Nodo<cliente> aux;
 	    if (esVacia()) {
 	        inicio = nuevo;
 	    }else {
@@ -84,7 +85,8 @@ public class colaPrioridad {
 	    size++;
 	    return nuevo;
 	}
-
+        
+        //eliminar
 	public void dequeue(){
 		if (!esVacia()) {
 			System.out.println("Dequeue... Value:"+inicio.getDato());
@@ -93,6 +95,7 @@ public class colaPrioridad {
 		}
 	}
 	
+        
 	public void peek() throws Exception{		//public T peek() throws Exception{
 	    if(!esVacia()){
 	    	System.out.print("\nPeek... Value: "+inicio.getDato().toString()+"\n");
@@ -101,8 +104,9 @@ public class colaPrioridad {
 	    }
 	}
 	
-	public boolean buscar(T referencia){
-	    Nodo<T> aux = inicio;
+        //buscar
+	public boolean buscar(cliente referencia){
+	    Nodo<cliente> aux = inicio;
 	    boolean existe = false;
 	    while(existe != true && aux != null){
 	        if (referencia == aux.getDato()) {
@@ -115,8 +119,9 @@ public class colaPrioridad {
 	    return existe;
 	}
 	
+        //muestra
 	public void imprimir(){
-	    Nodo<T> aux = inicio;
+	    Nodo<cliente> aux = inicio;
 		System.out.println("\nCola :");
 	    while(aux != null){
 	        System.out.println("¡_" + aux.getDato() + "_¡");
