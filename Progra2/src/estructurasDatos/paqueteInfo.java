@@ -13,7 +13,6 @@ public class paqueteInfo {
     }
     
     //to string
-
     @Override
     public String toString() {
         return "paqueteInfo{" + "tipo=" + tipo + ", prioridad=" + prioridad + '}';
