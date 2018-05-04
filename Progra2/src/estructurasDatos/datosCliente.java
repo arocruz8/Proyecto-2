@@ -49,9 +49,5 @@ public class datosCliente {
         this.tipo_paquete=tipo_paquete;
     }
 
-    @Override
-    public String toString() {
-        return "datosCliente{" + "nombre=" + nombre + ", correo=" + correo + ", tipo_usuario=" + tipo_usuario + ", tipo_paquete=" + tipo_paquete + '}';
-    }  
-   
+
 }
