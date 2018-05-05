@@ -61,7 +61,7 @@ public class ColaPrioridad extends cliente{
     /**
      *elimina
      */
-    public void suprime(){
+    public void eliminar(){
         if (vacia()){
             cola = cola.sig;
         }
@@ -85,17 +85,17 @@ public class ColaPrioridad extends cliente{
      * @param prioridad
      * @return
      */
-	public boolean buscar(Object elemento){
-	    Nodo aux = cola;
-	    boolean existe = false;
-	    while(existe != true && aux != null){
-	        if (elemento== aux.getElemento()) {
-	            existe = true;
-	        }
-	        else{
-	            aux = aux.sig;
-	        }
-	    }
-	    return existe;
-	}
+    public boolean buscar(Object elemento){
+        Nodo aux = cola;
+        boolean existe = false;
+        while(existe != true && aux != null){
+            if (elemento== aux.getElemento()) {
+                existe = true;
+            }
+            else{
+                aux = aux.sig;
+            }
+        }
+        return existe;
+    }
 }
