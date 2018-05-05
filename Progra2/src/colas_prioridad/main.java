@@ -9,5 +9,15 @@ public class main {
     cp.insertar(new cliente("Maria", "m@yahoo.com", "Embarazada", "No percedero"), 1);
     cp.imprimir();
     
+    cp.insertar(new cliente("Zaida", "z@yahoo.com", "Normal", "No percedero"), 0);
+    cp.imprimir();
+    
+    cp.primero();
+    //cp.imprimir();
+    
+    cp.primero_prioridad();
+    //cp.imprimir();
+    
+    cp.imprimir();
     }
 }

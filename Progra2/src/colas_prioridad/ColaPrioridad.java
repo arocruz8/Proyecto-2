@@ -1,71 +1,46 @@
 package colas_prioridad;
 public class ColaPrioridad extends cliente{
-    private class Nodo extends cliente{
-        public Object elemento;
-        public int prioridad;
-        public Nodo sig;
-        
-        //constructores
-        public Nodo(Object elemento, int prioridad, Nodo sig) {
-            this.elemento = elemento;
-            this.prioridad = prioridad;
-            this.sig = sig;
-        }
-
-        public Nodo() {
-        }
-        
-        //setter and getters
-        public Object getElemento() {
-            return elemento;
-        }
-
-        public void setElemento(Object elemento) {
-            this.elemento = elemento;
-        }
-
-        public int getPrioridad() {
-            return prioridad;
-        }
-
-        public void setPrioridad(int prioridad) {
-            this.prioridad = prioridad;
-        }
-
-        public Nodo getSig() {
-            return sig;
-        }
-
-        public void setSig(Nodo sig) {
-            this.sig = sig;
-        }     
-    }
-    
     //atributos clase cola de prioridad
     private Nodo cola;
-    
-    //construcotres
+
+    /**
+     * construcotres
+     */
     public ColaPrioridad() {
         cola = new Nodo();
         cola.sig = null;
     }
-    
-    //vacia
+
+    /**
+     *vacia
+     * @return
+     */
     public boolean vacia() {
         return (cola.sig==null);
     } 
     
-    //obtiene el primer elemento de la cola
+    /**
+     *obtiene el primer elemento de la cola
+     * @return
+     */
     public Object primero(){
         return cola.sig.elemento;
     }
     
-    //primero con prioridad
+    /**
+     *primero con prioridad
+     * @return
+     */
     public int primero_prioridad(){
         return cola.sig.prioridad;
     }      
-    
-    //agrega
+
+    /**
+     *agrega a la cola lo que hace es buscar el tipo de prioridad que tenga si ya existe lo mete
+     * en la cola que pertenezca sino crea una cola nueva
+     * @param elemento
+     * @param prioridad
+     */
     public void insertar(Object elemento, int prioridad) {
         Nodo p,q;
         boolean encontrado = false;
@@ -83,16 +58,20 @@ public class ColaPrioridad extends cliente{
         p.sig = q;
     }     
     
-    //elimina
+    /**
+     *elimina
+     */
     public void suprime(){
         if (vacia()){
             cola = cola.sig;
         }
-    }
-        
-    //muestra en consola
+    } 
+
+    /**
+     *muestra en consola
+     */
     public void imprimir(){
-        Nodo aux = cola.sig;
+        Nodo aux = cola;
             System.out.println("\nCola :");
         while(aux != null){
             System.out.println(aux.elemento);
@@ -101,12 +80,16 @@ public class ColaPrioridad extends cliente{
             System.out.println("");
     }
         
-        //busca en la cola
+    /**
+     * busca en la cola
+     * @param prioridad
+     * @return
+     */
 	public boolean buscar(Object elemento){
 	    Nodo aux = cola;
 	    boolean existe = false;
 	    while(existe != true && aux != null){
-	        if (elemento == aux.getElemento()) {
+	        if (elemento== aux.getElemento()) {
 	            existe = true;
 	        }
 	        else{

@@ -1,5 +1,6 @@
 package colas_prioridad;
-public class cliente {
+public class cliente{
+    //atributos
     private String nombre;
     private String correo;
     private String tipo_usuario;
@@ -48,4 +49,11 @@ public class cliente {
         this.tipo_usuario=tipo_usuario;
         this.tipo_paquete=tipo_paquete;
     }
+    
+    
+    //to string
+    @Override
+    public String toString() {
+        return "cliente{" + "nombre=" + nombre + ", correo=" + correo + ", tipo_usuario=" + tipo_usuario + ", tipo_paquete=" + tipo_paquete + '}';
+    } 
 }
