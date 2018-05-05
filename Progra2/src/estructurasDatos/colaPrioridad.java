@@ -9,7 +9,7 @@ package estructurasDatos;
 	}
 
 	public Nodo getTope(){
-		return inicio;
+            return inicio;
 	}
 
 	public static boolean esVacia(){
@@ -21,6 +21,7 @@ package estructurasDatos;
         
         //agrega
 	public Nodo<cliente> enqueue(cliente t){
+            colaPrioridad cp = new colaPrioridad();
 	    Nodo<cliente> nuevo = new Nodo<>(t);
 	    Nodo<cliente> aux;
 	    if (esVacia()) {
