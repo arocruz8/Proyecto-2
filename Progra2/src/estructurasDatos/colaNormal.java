@@ -1,9 +1,9 @@
 package estructurasDatos;
-public class colaPrioridad<cliente>{
+public class colaNormal<cliente>{
     private Nodo<cliente> inicio;
     private static int size = 0;
 
-    public colaPrioridad(){
+    public colaNormal(){
         inicio = null;
         size = 0;
     }
@@ -21,7 +21,7 @@ public class colaPrioridad<cliente>{
 
     //agrega
     public Nodo<cliente> enqueue(cliente t){
-        colaPrioridad cp = new colaPrioridad();
+        colaNormal cp = new colaNormal();
         Nodo<cliente> nuevo = new Nodo<>(t);
         Nodo<cliente> aux;
         if (esVacia()) {

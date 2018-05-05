@@ -2,7 +2,7 @@
 package estructurasDatos;
 public class main2 {
     public static void main(String [] args){
-        colaPrioridad cp = new colaPrioridad();
+        colaNormal cp = new colaNormal();
         cp.enqueue(new datosCliente("Ariel","@","normal","percedero"));
         cp.imprimir();
         cp.enqueue(new datosCliente("Maria","@yahoo.com","embarazada", "no percebero"));
