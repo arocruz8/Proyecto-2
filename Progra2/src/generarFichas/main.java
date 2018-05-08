@@ -23,12 +23,12 @@ public class main {
         System.out.println("Discapacidad");
         mostrar(p);
 
-        ListaEnlazada<Clientes> clientes = new ListaEnlazada<Clientes>();
+        LinkedList<Clientes> clientes = new LinkedList<Clientes>();
 
-        clientes.insertar(new Clientes("Nombre1", Constantes.Adulto_mayor));
-        clientes.insertar(new Clientes("Nombre2", Constantes.Discapaciad));
-        clientes.insertar(new Clientes("Nombre3", Constantes.Embarazada));
-        clientes.insertar(new Clientes("Nombre4", Constantes.Adulto_mayor));
+        clientes.add(new Clientes("Nombre1", Constantes.Adulto_mayor));
+        clientes.add(new Clientes("Nombre2", Constantes.Discapaciad));
+        clientes.add(new Clientes("Nombre3", Constantes.Embarazada));
+        clientes.add(new Clientes("Nombre4", Constantes.Adulto_mayor));
         
 
         System.out.println("CLIENTES");
@@ -51,7 +51,6 @@ public class main {
 
         // Solución 3
         // Realizar el metodo atender para devolver la ficha a su lugar
-
 
         Clientes pa = clientes.remove();
         System.out.println("> cliente: " + pa.getNombre());
@@ -79,31 +78,9 @@ public class main {
             pa.setFicha1(null);
             pa.setEspecialidad1(Constantes.Regular);
         }
-        if (pa.getEspecialidad2() != Constantes.Regular) {
-            if (pa.getEspecialidad2() == Constantes.Adulto_mayor) {
-                Fichas fi = pa.getFicha2();
-                o.add(fi);
-                // reseteo
-                pa.setFicha2(null);
-                pa.setEspecialidad2(Constantes.Regular);
-            } else if (pa.getEspecialidad2() == Constantes.Discapaciad) {
-                Fichas fi = pa.getFicha2();
-                p.add(fi);
-                // reseteo
-                pa.setFicha2(null);
-                pa.setEspecialidad2(Constantes.Regular);
-            } else if (pa.getEspecialidad2() == Constantes.Embarazada) {
-                Fichas fi = pa.getFicha2();
-                n.add(fi);
-                // reseteo
-                pa.setFicha2(null);
-                pa.setEspecialidad2(Constantes.Regular);
-            }
-        }
     }
-
+    
     private static void calcularEspecidadMasRequerida(colaGenerica<Fichas> o, colaGenerica<Fichas> n, colaGenerica<Fichas> p) {
-
         int no = o.size();
         int np = p.size();
         int nn = n.size();
@@ -112,18 +89,16 @@ public class main {
             System.out.println("Adulto mayor es la prioridad más requerida");
         }
         if (np < no && np < nn) {
-            System.out.println("Embarazadas es más requerido");
+            System.out.println("Embarazadas es la prioridad más requerido");
         }
         if (nn < no && nn < np) {
-            System.out.println("Discapacidad es más requerido");
+            System.out.println("Discapacidad es la prioridad más requerido");
         }
-
-
     }
-
-    private static void asignarFichas(colaGenerica<Fichas> o, colaGenerica<Fichas> n, colaGenerica<Fichas> p, ListaEnlazada<Clientes> clientes) {
-
-        int m = clientes.largoLista();
+    
+    
+    private static void asignarFichas(colaGenerica<Fichas> o, colaGenerica<Fichas> n, colaGenerica<Fichas> p, LinkedList<Clientes> clientes) {
+        int m = clientes.size();
         for (int i = 0; i < m; i++) {
             Clientes pa = clientes.remove();
 
@@ -138,31 +113,15 @@ public class main {
                 pa.setFicha1(fi);
             }
 
-
-            if (pa.getEspecialidad2() != Constantes.Regular) {
-                if (pa.getEspecialidad2() == Constantes.Embarazada) {
-                    Fichas fi = n.remove();
-                    pa.setFicha2(fi);
-                } else if (pa.getEspecialidad2() == Constantes.Adulto_mayor) {
-                    Fichas fi = o.remove();
-                    pa.setFicha2(fi);
-                } else if (pa.getEspecialidad2() == Constantes.Discapaciad) {
-                    Fichas fi = p.remove();
-                    pa.setFicha2(fi);
-                }
-            }
-
-            clientes.insertar(pa);
+            clientes.add(pa);
         }
-
     }
     
-    /*
     private static void mostrar(colaGenerica<Fichas> o) {
 
-        colaGenerica<Fichas> temp = new colaGenerica<>();
+        colaGenerica<Fichas> temp = new colaGenerica<Fichas>();
 
-        while (!o.) {
+        while (!o.isEmpty()) {
             Fichas fi = o.remove();
             System.out.println(" Ficha: " + fi.getEspecialidad() + " " + fi.getCodigo());
             temp.add(fi);
@@ -171,13 +130,13 @@ public class main {
             Fichas fi = temp.remove();
             o.add(fi);
         }
-    }*/
+    }
 
-    public static void mostrar(colaGenerica<Clientes> cola) {
+    public static void mostrar(LinkedList<Clientes> cola) {
         int n = cola.size();
         for (int i = 0; i < n; i++) {
             Clientes pa = cola.remove();
-            System.out.println(" Cliente: " + pa.getNombre() + " Prioridad: " + pa.getEspecialidad1() + ", " + pa.getEspecialidad2());
+            System.out.println(" Cliente: " + pa.getNombre() + " Prioridad: " + pa.getEspecialidad1());
             cola.add(pa);
         }
     }

@@ -4,6 +4,21 @@ import java.util.NoSuchElementException;
 public class colaGenerica<E> implements interfazCola<E> {
     private Node<E> first, last;
 
+    public int size() {
+        Node<E> aux;
+        int numElementos=0;
+        aux = first;
+        while(aux != null){
+            numElementos++;
+            aux = aux.back;
+        }
+        return numElementos;
+    }
+
+    public boolean isEmpty() {
+        return first == null;
+    }
+
     private static class Node<E> {
         private E data;
 
