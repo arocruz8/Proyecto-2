@@ -41,11 +41,10 @@ public class colaNormal<cliente>{
 
     //elimina en la cola
     public void dequeue(){
-            if (!esVacia()) {
-                    System.out.println("Dequeue... Value:"+inicio.getDato());
-                    inicio = inicio.getSiguiente();
-                    size--;
-            }
+        if (!esVacia()) {          
+            inicio = inicio.getSiguiente();
+            size--;
+        }
     }
 
     public void peek() throws Exception{		//public T peek() throws Exception{
