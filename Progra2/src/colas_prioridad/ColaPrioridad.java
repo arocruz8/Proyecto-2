@@ -56,8 +56,8 @@ public class ColaPrioridad extends cliente{
         p.elemento = elemento;
         p.prioridad = prioridad;
         p.sig = q;
-    }     
-    
+    }   
+                  
     /**
      *elimina
      */
