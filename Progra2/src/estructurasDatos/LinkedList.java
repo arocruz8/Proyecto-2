@@ -1,5 +1,5 @@
 package estructurasDatos;
-public class ListaEnlazada<cliente>{
+public class LinkedList<cliente>{
     private Nodo<cliente> head;
     
     public Nodo<cliente> getHead() {
@@ -9,7 +9,7 @@ public class ListaEnlazada<cliente>{
 	this.head = head;
     }
     
-    public ListaEnlazada(){
+    public LinkedList(){
         listaVacia();
     }
 
@@ -20,7 +20,7 @@ public class ListaEnlazada<cliente>{
         return head == null;
     }
 
-    public void insertar(cliente t){
+    public void add(cliente t){
         Nodo<cliente> nuevo = new Nodo<>(t);
  
         if (!esVacia()){

@@ -1,20 +1,20 @@
 package generarFichas;
-public class Fichas {
+public class Fichas{
     //atributos de la clase ficha
-    private int especialidad;
+    private String especialidad;
     private int codigo;
     
     //constructor
-    public Fichas(int especialidad, int codigo) {
+    public Fichas(String especialidad, int codigo){
         this.especialidad = especialidad;
         this.codigo = codigo;
     }
 
-    public int getEspecialidad() {
+    public String getEspecialidad() {
         return especialidad;
     }
 
-    public void setEspecialidad(int especialidad) {
+    public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
 

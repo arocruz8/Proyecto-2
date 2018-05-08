@@ -5,6 +5,7 @@ public class cliente{
     private String correo;
     private String tipo_usuario;
     private String tipo_paquete;
+    private int prioridad;
     
     //setter and getters
     public String getNombre() {
@@ -38,22 +39,32 @@ public class cliente{
     public void setTipo_paquete(String tipo_paquete) {
         this.tipo_paquete = tipo_paquete;
     }
+
+    public int getPrioridad() {
+        return prioridad;
+    }
+
+    public void setPrioridad(int prioridad) {
+        this.prioridad = prioridad;
+    }
     
     //constructores
     public cliente(){
     }
     
-    public cliente(String nombre, String correo, String tipo_usuario, String tipo_paquete){
+    public cliente(String nombre, String correo, String tipo_usuario, String tipo_paquete, int prioridad){
         this.nombre=nombre;
         this.correo=correo;
         this.tipo_usuario=tipo_usuario;
         this.tipo_paquete=tipo_paquete;
+        this.prioridad=prioridad;
     }
     
     
     //to string
     @Override
     public String toString() {
-        return "cliente{" + "nombre=" + nombre + ", correo=" + correo + ", tipo_usuario=" + tipo_usuario + ", tipo_paquete=" + tipo_paquete + '}';
-    } 
+        return "cliente{" + "nombre=" + nombre + ", correo=" + correo + ", tipo_usuario=" + tipo_usuario + ", tipo_paquete=" + tipo_paquete + ", prioridad=" + prioridad + '}';
+    }
+    
 }

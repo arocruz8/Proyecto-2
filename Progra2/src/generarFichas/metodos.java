@@ -2,63 +2,9 @@
 package generarFichas;
 import estructurasDatos.*;
 import java.util.LinkedList;
-public class main {
-    public static void main(String[] args) {
-
-        colaGenerica<Fichas> o = new colaGenerica<Fichas>();
-        colaGenerica<Fichas> n = new colaGenerica<Fichas>();
-        colaGenerica<Fichas> p = new colaGenerica<Fichas>();
-
-        // llenar
-        for (int i = 1; i <= 20; i++) {
-            o.add(new Fichas(Constantes.Adulto_mayor, i));
-            n.add(new Fichas(Constantes.Embarazada, i));
-            p.add(new Fichas(Constantes.Discapaciad, i));
-        }
-
-        System.out.println("Adulto mayor");
-        mostrar(o);
-        System.out.println("Embarazada");
-        mostrar(n);
-        System.out.println("Discapacidad");
-        mostrar(p);
-
-        LinkedList<Clientes> clientes = new LinkedList<Clientes>();
-
-        clientes.add(new Clientes("Nombre1", Constantes.Adulto_mayor));
-        clientes.add(new Clientes("Nombre2", Constantes.Discapaciad));
-        clientes.add(new Clientes("Nombre3", Constantes.Embarazada));
-        clientes.add(new Clientes("Nombre4", Constantes.Adulto_mayor));
-        
-
-        System.out.println("CLIENTES");
-        mostrar(clientes);
-
-        // Solución 1
-        asignarFichas(o, n, p, clientes);
-
-
-        System.out.println("Adulto mayor");
-        mostrar(o);
-        System.out.println("Embarazada");
-        mostrar(n);
-        System.out.println("Discapaciad");
-        mostrar(p);
-
-        // Solución 2
-        // Calcular cual es la especialidad mas requerida
-        calcularEspecidadMasRequerida(o, n, p);
-
-        // Solución 3
-        // Realizar el metodo atender para devolver la ficha a su lugar
-
-        Clientes pa = clientes.remove();
-        System.out.println("> cliente: " + pa.getNombre());
-        atender(pa, o, p, n);
-
-    }
-
-    private static void atender(Clientes pa, colaGenerica<Fichas> o, colaGenerica<Fichas> p, colaGenerica<Fichas> n) {
+public class metodos{
+    
+    public void atender(Clientes pa, colaGenerica<Fichas> o, colaGenerica<Fichas> p, colaGenerica<Fichas> n) {
         if (pa.getEspecialidad1() == Constantes.Adulto_mayor) {
             Fichas fi = pa.getFicha1();
             o.add(fi);
@@ -80,7 +26,7 @@ public class main {
         }
     }
     
-    private static void calcularEspecidadMasRequerida(colaGenerica<Fichas> o, colaGenerica<Fichas> n, colaGenerica<Fichas> p) {
+    public void calcularEspecidadMasRequerida(colaGenerica<Fichas> o, colaGenerica<Fichas> n, colaGenerica<Fichas> p) {
         int no = o.size();
         int np = p.size();
         int nn = n.size();
@@ -97,7 +43,7 @@ public class main {
     }
     
     
-    private static void asignarFichas(colaGenerica<Fichas> o, colaGenerica<Fichas> n, colaGenerica<Fichas> p, LinkedList<Clientes> clientes) {
+    public void asignarFichas(colaGenerica<Fichas> o, colaGenerica<Fichas> n, colaGenerica<Fichas> p, LinkedList<Clientes> clientes) {
         int m = clientes.size();
         for (int i = 0; i < m; i++) {
             Clientes pa = clientes.remove();
@@ -112,12 +58,11 @@ public class main {
                 Fichas fi = p.remove();
                 pa.setFicha1(fi);
             }
-
             clientes.add(pa);
         }
     }
     
-    private static void mostrar(colaGenerica<Fichas> o) {
+    public void mostrar(colaGenerica<Fichas> o) {
 
         colaGenerica<Fichas> temp = new colaGenerica<Fichas>();
 
@@ -132,12 +77,67 @@ public class main {
         }
     }
 
-    public static void mostrar(LinkedList<Clientes> cola) {
+    public void mostrar(LinkedList<Clientes> cola) {
         int n = cola.size();
         for (int i = 0; i < n; i++) {
             Clientes pa = cola.remove();
             System.out.println(" Cliente: " + pa.getNombre() + " Prioridad: " + pa.getEspecialidad1());
             cola.add(pa);
         }
+    }
+    
+    public static void main(String[] args) {
+        metodos m = new metodos();
+        colaGenerica<Fichas> o = new colaGenerica<Fichas>();
+        colaGenerica<Fichas> n = new colaGenerica<Fichas>();
+        colaGenerica<Fichas> p = new colaGenerica<Fichas>();
+
+        // llenar
+        for (int i = 1; i <= 20; i++) {
+            o.add(new Fichas(Constantes.Adulto_mayor, i));
+            n.add(new Fichas(Constantes.Embarazada, i));
+            p.add(new Fichas(Constantes.Discapaciad, i));
+        }
+
+        System.out.println("Adulto mayor");
+        m.mostrar(o);
+        System.out.println("Embarazada");
+        m.mostrar(n);
+        System.out.println("Discapacidad");
+        m.mostrar(p);
+
+        LinkedList<Clientes> clientes = new LinkedList<Clientes>();
+
+        clientes.add(new Clientes("Juan", Constantes.Adulto_mayor, "percedero"));
+        clientes.add(new Clientes("Rosa", Constantes.Discapaciad, "no percedero"));
+        clientes.add(new Clientes("Irene", Constantes.Embarazada, "percedero"));
+        clientes.add(new Clientes("Pedro", Constantes.Adulto_mayor, "no perceder"));
+        
+
+        System.out.println("CLIENTES");
+        m.mostrar(clientes);
+
+        // Solución 1
+        m.asignarFichas(o, n, p, clientes);
+
+
+        System.out.println("Adulto mayor");
+        m.mostrar(o);
+        System.out.println("Embarazada");
+        m.mostrar(n);
+        System.out.println("Discapaciad");
+        m.mostrar(p);
+
+        // Solución 2
+        // Calcular cual es la especialidad mas requerida
+        m.calcularEspecidadMasRequerida(o, n, p);
+
+        // Solución 3
+        // Realizar el metodo atender para devolver la ficha a su lugar
+
+        Clientes pa = clientes.remove();
+        System.out.println("> cliente: " + pa.getNombre());
+        m.atender(pa, o, p, n);
+
     }
 }

@@ -2,15 +2,15 @@ package generarFichas;
 public class Clientes {
     private String nombre;
     private Fichas ficha1;
-    private int especialidad1;
+    private String especialidad1;
+    private String tipo_paquete;
     
 
-    public Clientes(String nombre, int especialidad1) {
+    public Clientes(String nombre, String especialidad1, String tipo_paquete) {
         this.nombre = nombre;
         this.especialidad1 = especialidad1;
-        
+        this.tipo_paquete = tipo_paquete;
         this.ficha1 = null;
-       
     }
 
     public String getNombre() {
@@ -29,11 +29,21 @@ public class Clientes {
         this.ficha1 = ficha1;
     }
 
-    public int getEspecialidad1() {
+    public String getEspecialidad1() {
         return especialidad1;
     }
 
-    public void setEspecialidad1(int especialidad1) {
+    public void setEspecialidad1(String especialidad1) {
         this.especialidad1 = especialidad1;
     }
+
+    public String getTipo_paquete() {
+        return tipo_paquete;
+    }
+
+    public void setTipo_paquete(String tipo_paquete) {
+        this.tipo_paquete = tipo_paquete;
+    }
+    
+    
 }

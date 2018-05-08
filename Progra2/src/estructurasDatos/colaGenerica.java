@@ -2,46 +2,30 @@ package estructurasDatos;
 import java.util.NoSuchElementException;
 
 public class colaGenerica<E> implements interfazCola<E> {
-    private Node<E> first, last;
+    private Nodo<E> cabeza, cola;
 
-    public int size() {
-        Node<E> aux;
-        int numElementos=0;
-        aux = first;
-        while(aux != null){
-            numElementos++;
-            aux = aux.back;
-        }
-        return numElementos;
-    }
-
-    public boolean isEmpty() {
-        return first == null;
-    }
-
-    private static class Node<E> {
+    private static class Nodo<E> {
         private E data;
 
-        private Node<E> back;
+        private Nodo<E> back;
 
-        public Node(E element) {
+        public Nodo(E element) {
             data = element;
         }
     }
-
    
     public interfazCola<E> add(E element) {
-        Node<E> newElement = new Node<E>(element);
-        if (first == null) {
-            first = newElement;
+        Nodo<E> nuevoNodo = new Nodo<E>(element);
+        if (cabeza == null) {
+            cabeza = nuevoNodo;
         } else {
-            if (first.back == null) {
-                first.back = newElement;
+            if (cabeza.back == null) {
+                cabeza.back = nuevoNodo;
             } else {
-                last.back = newElement;
+                cola.back = nuevoNodo;
             }
 
-            last = newElement;
+            cola = nuevoNodo;
         }
 
         return this;
@@ -49,21 +33,21 @@ public class colaGenerica<E> implements interfazCola<E> {
 
     
     public E element() throws NoSuchElementException {
-        if (first == null) {
+        if (cabeza == null) {
             throw new NoSuchElementException("Queue does not contain any items.");
         }
 
-        return first.data;
+        return cabeza.data;
     }
 
     
     public E remove() throws NoSuchElementException {
-        if (first == null) {
+        if (cabeza == null) {
             throw new NoSuchElementException("Queue does not contain any items.");
         }
 
-        E output = first.data;
-        first = first.back;
+        E output = cabeza.data;
+        cabeza = cabeza.back;
         return output;
     }
 
@@ -76,18 +60,34 @@ public class colaGenerica<E> implements interfazCola<E> {
 
     
     public E peek() {
-        return first == null ? null : first.data;
+        return cabeza == null ? null : cabeza.data;
     }
 
    
     public E poll() {
-        if (first == null) {
+        if (cabeza == null) {
             return null;
         }
 
-        E output = first.data;
-        first = first.back;
+        E output = cabeza.data;
+        cabeza = cabeza.back;
 
         return output;
     }
+    
+      public int size() {
+        Nodo<E> aux;
+        int numElementos=0;
+        aux = cabeza;
+        while(aux != null){
+            numElementos++;
+            aux = aux.back;
+        }
+        return numElementos;
+    }
+
+    public boolean isEmpty() {
+        return cabeza == null;
+    }
+    
 }
