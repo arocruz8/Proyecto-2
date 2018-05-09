@@ -1,6 +1,6 @@
 package colas_prioridad;
 public class ColaPrioridad extends cliente{
-    //atributos clase cola de prioridad
+    //atributos clase cola de prioridad hola
     private Nodo cola;
 
     /**
