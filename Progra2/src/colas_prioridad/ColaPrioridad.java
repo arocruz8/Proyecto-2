@@ -82,7 +82,7 @@ public class ColaPrioridad extends cliente{
         
     /**
      * busca en la cola
-     * @param prioridad
+     * @param elemento
      * @return
      */
     public boolean buscar(Object elemento){
