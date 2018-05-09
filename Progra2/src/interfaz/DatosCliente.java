@@ -1,11 +1,11 @@
 package interfaz;
 
 import colas_prioridad.*;
-import generarFichas.*;
+
 public class DatosCliente extends javax.swing.JFrame {
     
     ColaPrioridad c1 = new ColaPrioridad();
-    metodos m = new metodos();
+    
     
     //cliente info = new cliente();
     public DatosCliente() {
