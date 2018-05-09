@@ -9,6 +9,9 @@ public class ColaPrioridad extends cliente{
     public ColaPrioridad() {
         cola = new Nodo();
         cola.sig = null;
+        /**
+         * La reconcha de la lora
+         */
     }
 
     /**
