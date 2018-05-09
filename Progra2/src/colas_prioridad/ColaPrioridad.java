@@ -66,6 +66,18 @@ public class ColaPrioridad extends cliente{
             cola = cola.sig;
         }
     } 
+    
+    public void eliminarPrioridad(int prioridad){
+        Nodo p,q;
+        boolean a = false;
+        p=cola;
+        while((p.sig!=null&&(!a))){
+            if(p.sig.prioridad==prioridad)
+                a = true;
+            else p=p.sig;
+        }
+        q=p.sig;
+    }
 
     /**
      *muestra en consola

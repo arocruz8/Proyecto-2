@@ -19,5 +19,7 @@ public class main {
     //cp.imprimir();
     
     cp.imprimir();
+    cp.eliminarPrioridad(0);
+    cp.imprimir();
     }
 }

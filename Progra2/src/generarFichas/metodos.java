@@ -1,4 +1,3 @@
-
 package generarFichas;
 import estructurasDatos.*;
 import java.util.LinkedList;
