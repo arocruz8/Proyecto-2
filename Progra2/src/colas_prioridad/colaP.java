@@ -1,12 +1,12 @@
 package colas_prioridad;
-public class ColaPrioridad extends cliente{
+public class colaP {
     //atributos clase cola de prioridad
     private Nodo cola;
 
     /**
      * construcotres
      */
-    public ColaPrioridad() {
+    public colaP() {
         cola = new Nodo();
         cola.sig = null;
         /**

@@ -1,6 +1,7 @@
 package interfaz;
 
-import colas_prioridad.*;
+import quiosco.ColaPrioridad;
+import quiosco.cliente;
 
 public class DatosCliente extends javax.swing.JFrame {
     

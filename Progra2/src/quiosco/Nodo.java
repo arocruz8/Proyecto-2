@@ -1,5 +1,5 @@
-package colas_prioridad;
-public class Nodo {
+package quiosco;
+public class Nodo extends cliente { 
     public Object elemento;
     public int prioridad;
     public Nodo sig;
@@ -38,4 +38,5 @@ public class Nodo {
     public void setSig(Nodo sig) {
         this.sig = sig;
     }     
+    
 }

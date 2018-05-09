@@ -1,4 +1,4 @@
-package colas_prioridad;
+package quiosco;
 public class main {
     public static void main(String[] args){
     ColaPrioridad cp = new ColaPrioridad();

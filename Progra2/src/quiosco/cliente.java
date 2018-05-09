@@ -1,4 +1,4 @@
-package colas_prioridad;
+package quiosco;
 public class cliente{
     //atributos
     private String nombre;
