@@ -7,6 +7,8 @@ public class cliente{
     private String tipo_paquete;
     private int prioridad;
     
+    private ficha fi;
+    
     //setter and getters
     public String getNombre() {
         return nombre;
@@ -47,6 +49,17 @@ public class cliente{
     public void setPrioridad(int prioridad) {
         this.prioridad = prioridad;
     }
+
+    public ficha getFi() {
+        return fi;
+    }
+
+    public void setFi(ficha fi) {
+        this.fi = fi;
+    }
+    
+    
+    
     
     //constructores
     public cliente(){
@@ -58,6 +71,7 @@ public class cliente{
         this.tipo_usuario=tipo_usuario;
         this.tipo_paquete=tipo_paquete;
         this.prioridad=prioridad;
+        this.fi=null;
     }
     
     
