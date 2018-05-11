@@ -17,6 +17,7 @@ public class ventanaFicha extends javax.swing.JFrame {
         
         jLabeltipoPaquete.setText(textotipoPaquete);
         jLabeltipoUsuario.setText(textotipoUsuario); 
+        jLabelCodigo.setText(f2.getCodigoFicha());
         f2.getFichasNP();
         f2.getFichasP();
         //f2.getCodigoFicha();
@@ -37,7 +38,7 @@ public class ventanaFicha extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabeltipoPaquete = new javax.swing.JLabel();
         jLabeltipoUsuario = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabelCodigo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
         jLabel3.setText("jLabel3");
@@ -51,7 +52,7 @@ public class ventanaFicha extends javax.swing.JFrame {
 
         jLabeltipoUsuario.setText("Prioridad");
 
-        jLabel2.setText("Código");
+        jLabelCodigo.setText("Código");
 
         jButton1.setText("Cerrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -76,7 +77,7 @@ public class ventanaFicha extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabeltipoUsuario)
                                     .addComponent(jLabeltipoPaquete)
-                                    .addComponent(jLabel2))))
+                                    .addComponent(jLabelCodigo))))
                         .addGap(0, 181, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -93,7 +94,7 @@ public class ventanaFicha extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabeltipoUsuario)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(jLabelCodigo)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -144,8 +145,8 @@ public class ventanaFicha extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelCodigo;
     private javax.swing.JLabel jLabeltipoPaquete;
     private javax.swing.JLabel jLabeltipoUsuario;
     // End of variables declaration//GEN-END:variables
