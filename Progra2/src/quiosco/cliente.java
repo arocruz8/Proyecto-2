@@ -58,12 +58,9 @@ public class cliente{
         this.fi = fi;
     }
     
-    
-    
-    
     //constructores
-    public cliente(){
-    }
+   public cliente(){
+   }
     
     public cliente(String nombre, String correo, String tipo_usuario, String tipo_paquete, int prioridad){
         this.nombre=nombre;
@@ -80,5 +77,9 @@ public class cliente{
     public String toString() {
         return "cliente{" + "nombre=" + nombre + ", correo=" + correo + ", tipo_usuario=" + tipo_usuario + ", tipo_paquete=" + tipo_paquete + ", prioridad=" + prioridad + '}';
     }
+    
+    
+    
+    
     
 }

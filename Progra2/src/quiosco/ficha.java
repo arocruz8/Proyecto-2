@@ -18,7 +18,7 @@ public class ficha extends cliente{
             this.numFicha++;
         }
         this.codigoFicha = this.tipoPaquete+" - "+this.tipoUsuario+" - "+this.numFicha;
-        if(this.tipoPaquete.equals("P")){   // lleva la contidad de las ficha de perecederos
+        if(this.tipoPaquete=="P"){   // lleva la contidad de las ficha de perecederos
             this.fichasP++;                 // o no perecederos instanciadas
         }else{
             this.fichasNP++;

@@ -1,12 +1,21 @@
 package interfaz;
 
-import quiosco.ColaPrioridad;
-import quiosco.cliente;
+import quiosco.*;
+
 
 public class DatosCliente extends javax.swing.JFrame {
     
     ColaPrioridad c1 = new ColaPrioridad();
     
+    //atributos clientes
+    public static String nombre;
+    public static String correo;
+    public static String tipo_usuario;
+    public static String tipo_paquete;
+    
+    //atributos ficha
+    public static String tipoPaquete;
+    public static String tipoUsuario;
     
     //cliente info = new cliente();
     public DatosCliente() {
@@ -15,10 +24,10 @@ public class DatosCliente extends javax.swing.JFrame {
     
     public void agregarDatos(){
         cliente data = new cliente();
-        String nombre=jTextNombre.getText();
-        String correo=jTextCorreo.getText();
-        String tipo_usuario=jTextUsuario.getText();
-        String tipo_paquete=jTextPaquete.getText();
+        nombre=jTextNombre.getText();
+        correo=jTextCorreo.getText();
+        tipo_usuario=jTextUsuario.getText();
+        tipo_paquete=jTextPaquete.getText();
         int prioridad=Integer.parseInt(jTextPrioriadad.getText());
         
         data.setNombre(nombre);
@@ -28,7 +37,6 @@ public class DatosCliente extends javax.swing.JFrame {
         data.setPrioridad(prioridad);
 
         int priority = prioridad;
-        
         c1.insertar(data, priority);
     }
     
@@ -36,8 +44,16 @@ public class DatosCliente extends javax.swing.JFrame {
         c1.imprimir();
     }
     
-    public void ficha(){
-       // m.asignarFichas(o, n, p, clientes);
+    public void generarficha(){
+        ficha f =new ficha(tipoPaquete, tipoUsuario);
+        tipoPaquete = jTextPaquete.getText();
+        tipoUsuario = jTextUsuario.getText();
+        
+        f.setTipoPaquete(tipoPaquete);
+        f.setTipoUsuario(tipoUsuario);
+        f.getFichasP();
+        f.getFichasNP();
+        f.getCodigoFicha();
     }
     
     @SuppressWarnings("unchecked")
@@ -61,7 +77,6 @@ public class DatosCliente extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         panel2 = new java.awt.Panel();
         jLabel2 = new javax.swing.JLabel();
@@ -139,8 +154,6 @@ public class DatosCliente extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("ficha xxx");
-
         jLabel19.setText("NP -> no percederos y P -> percederos");
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
@@ -161,20 +174,9 @@ public class DatosCliente extends javax.swing.JFrame {
                         .addGap(36, 36, 36))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(63, 63, 63))
+                        .addGap(63, 349, Short.MAX_VALUE))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(panel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(jTextPrioriadad, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(panel1Layout.createSequentialGroup()
-                                    .addComponent(jLabelPaquete)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addComponent(jLabelUsuario)
@@ -189,16 +191,24 @@ public class DatosCliente extends javax.swing.JFrame {
                                         .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jTextCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(jLabel7)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(panel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addGap(40, 40, 40)
+                                        .addComponent(jTextPrioriadad, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(panel1Layout.createSequentialGroup()
+                                        .addComponent(jLabelPaquete)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelNombre)
@@ -472,8 +482,15 @@ public class DatosCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        ventanaFicha vf = new ventanaFicha();
+        ficha f1 =new ficha(tipoPaquete, tipoUsuario);
+        tipoPaquete=f1.getTipoPaquete();
+        tipoUsuario=f1.getTipoUsuario();
+        ventanaFicha vf = new ventanaFicha(tipoPaquete, tipoUsuario);
         vf.setVisible(true);
+        f1.getFichasP();
+        f1.getFichasNP();
+        f1.getCodigoFicha();
+        generarficha();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jTextPrioriadadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPrioriadadActionPerformed
@@ -514,7 +531,6 @@ public class DatosCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelPaquete;
     private javax.swing.JLabel jLabelUsuario;
     private javax.swing.JTextField jTextCorreo;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;

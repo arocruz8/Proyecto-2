@@ -1,21 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package interfaz;
-
-/**
- *
- * @author Gilberto Rodriguez
- */
+import quiosco.*;
 public class ventanaFicha extends javax.swing.JFrame {
 
     /**
      * Creates new form ventanaFicha
      */
-    public ventanaFicha() {
+    public static String textotipoPaquete;
+    public static String textotipoUsuario;
+    
+    
+    public ventanaFicha(String tipoPaquete, String tipoUsuario) {
         initComponents();
+        ficha f2 = new ficha(tipoPaquete, tipoUsuario);
+        textotipoPaquete=tipoPaquete;
+        textotipoUsuario=tipoUsuario;
+        
+        jLabeltipoPaquete.setText(textotipoPaquete);
+        jLabeltipoUsuario.setText(textotipoUsuario); 
+        f2.getFichasNP();
+        f2.getFichasP();
+        //f2.getCodigoFicha();
+        
+            
     }
 
     /**
@@ -29,7 +35,10 @@ public class ventanaFicha extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabeltipoPaquete = new javax.swing.JLabel();
+        jLabeltipoUsuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jLabel3.setText("jLabel3");
 
@@ -38,7 +47,18 @@ public class ventanaFicha extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Ficha");
 
-        jLabel2.setText("Su ficha es: ...");
+        jLabeltipoPaquete.setText("Tipo paquete");
+
+        jLabeltipoUsuario.setText("Prioridad");
+
+        jLabel2.setText("Código");
+
+        jButton1.setText("Cerrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -47,12 +67,21 @@ public class ventanaFicha extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel2)))
-                .addContainerGap(131, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabeltipoUsuario)
+                                    .addComponent(jLabeltipoPaquete)
+                                    .addComponent(jLabel2))))
+                        .addGap(0, 181, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -60,12 +89,22 @@ public class ventanaFicha extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(28, 28, 28)
+                .addComponent(jLabeltipoPaquete)
+                .addGap(18, 18, 18)
+                .addComponent(jLabeltipoUsuario)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -97,14 +136,17 @@ public class ventanaFicha extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ventanaFicha().setVisible(true);
+                new ventanaFicha(null, null).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabeltipoPaquete;
+    private javax.swing.JLabel jLabeltipoUsuario;
     // End of variables declaration//GEN-END:variables
 }
