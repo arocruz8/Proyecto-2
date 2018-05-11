@@ -1,6 +1,4 @@
 package quiosco;
-
-
 public class ficha {
     private String codigoFicha;
     private String tipoPaquete;
