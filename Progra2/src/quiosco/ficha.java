@@ -1,11 +1,13 @@
 package quiosco;
-public class ficha {
+public class ficha extends cliente{
     private String codigoFicha;
     private String tipoPaquete;
     private String tipoUsuario;
     private static int numFicha;
     private static int fichasP;
     private static int fichasNP;
+    
+    
 
     public ficha(String tipoPaquete, String tipoUsuario) {
         this.tipoPaquete = tipoPaquete;
@@ -47,27 +49,27 @@ public class ficha {
         this.tipoUsuario = tipoUsuario;
     }
 
-    public static int getNumFicha() {
+    public int getNumFicha() {
         return numFicha;
     }
 
-    public static void setNumFicha(int numFicha) {
+    public void setNumFicha(int numFicha) {
         ficha.numFicha = numFicha;
     }
 
-    public static int getFichasP() {
+    public int getFichasP() {
         return fichasP;
     }
 
-    public static void setFichasP(int fichasP) {
+    public void setFichasP(int fichasP) {
         ficha.fichasP = fichasP;
     }
 
-    public static int getFichasNP() {
+    public int getFichasNP() {
         return fichasNP;
     }
 
-    public static void setFichasNP(int fichasNP) {
+    public void setFichasNP(int fichasNP) {
         ficha.fichasNP = fichasNP;
     }
     
