@@ -5,7 +5,7 @@ public class ficha {
     private String codigoFicha;
     private String tipoPaquete;
     private String tipoUsuario;
-    private int numFicha;
+    private static int numFicha;
     private static int fichasP;
     private static int fichasNP;
 
@@ -49,12 +49,12 @@ public class ficha {
         this.tipoUsuario = tipoUsuario;
     }
 
-    public int getNumFicha() {
+    public static int getNumFicha() {
         return numFicha;
     }
 
-    public void setNumFicha(int numFicha) {
-        this.numFicha = numFicha;
+    public static void setNumFicha(int numFicha) {
+        ficha.numFicha = numFicha;
     }
 
     public static int getFichasP() {
@@ -71,5 +71,18 @@ public class ficha {
 
     public static void setFichasNP(int fichasNP) {
         ficha.fichasNP = fichasNP;
-    }   
+    }
+    
+    public static void main(String[] args){
+        ficha ficha1=new ficha("NP", "D");
+        ficha ficha2=new ficha("P", "E");
+        ficha ficha3=new ficha("NP", "M");
+        
+        System.out.println(ficha1.getCodigoFicha());
+        System.out.println(ficha2.getCodigoFicha());
+        System.out.println(ficha3.getCodigoFicha());
+        
+        ficha1.getFichasP();
+        ficha1.getFichasNP();
+    }
 }
