@@ -62,9 +62,9 @@ public abstract class heap<T extends Comparable<T>> {
         int i = Heap.size() - 1;
         int p = padre(i);
         while(i > 0 && (sign == Heap.get(i).compareTo(Heap.get(p)))) {
-                intercambiar(i, p);
-                i = p;
-                p = padre(i);
+            intercambiar(i, p);
+            i = p;
+            p = padre(i);
         }
     }
     

@@ -54,6 +54,9 @@ public class DatosCliente extends javax.swing.JFrame {
         f.getFichasP();
         f.getFichasNP();
         f.getCodigoFicha();
+        
+        ventanaFicha vf = new ventanaFicha(tipoPaquete, tipoUsuario);
+        vf.setVisible(true);
     }
     
     @SuppressWarnings("unchecked")
@@ -549,6 +552,7 @@ public class DatosCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        /*
         ficha f1 =new ficha(tipoPaquete, tipoUsuario);
         tipoPaquete=f1.getTipoPaquete();
         tipoUsuario=f1.getTipoUsuario();
@@ -557,6 +561,8 @@ public class DatosCliente extends javax.swing.JFrame {
         f1.getFichasP();
         f1.getFichasNP();
         f1.getCodigoFicha();
+        */
+        agregarDatos();
         generarficha();
     }//GEN-LAST:event_jButton7ActionPerformed
 
