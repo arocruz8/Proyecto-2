@@ -72,7 +72,6 @@ public class DatosCliente extends javax.swing.JFrame {
         jTextNombre = new javax.swing.JTextField();
         jLabelNombre = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jTextPrioriadad = new javax.swing.JTextField();
@@ -132,13 +131,6 @@ public class DatosCliente extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Datos de clientes");
 
-        jButton2.setText("Agregar cliente");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         jButton3.setText("Mostrar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +150,7 @@ public class DatosCliente extends javax.swing.JFrame {
 
         jLabel7.setText("D->1, M->2, E->3, R->4");
 
-        jButton7.setText("Ficha");
+        jButton7.setText("Generar Ficha");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -178,8 +170,6 @@ public class DatosCliente extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
                         .addGap(18, 18, 18)
                         .addComponent(jButton7)
                         .addGap(36, 36, 36))
@@ -248,7 +238,6 @@ public class DatosCliente extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton7))
                 .addContainerGap())
@@ -453,7 +442,7 @@ public class DatosCliente extends javax.swing.JFrame {
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14)
                     .addGroup(panel4Layout.createSequentialGroup()
@@ -546,21 +535,8 @@ public class DatosCliente extends javax.swing.JFrame {
         mostrar();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        agregarDatos();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        /*
-        ficha f1 =new ficha(tipoPaquete, tipoUsuario);
-        tipoPaquete=f1.getTipoPaquete();
-        tipoUsuario=f1.getTipoUsuario();
-        ventanaFicha vf = new ventanaFicha(tipoPaquete, tipoUsuario);
-        vf.setVisible(true);
-        f1.getFichasP();
-        f1.getFichasNP();
-        f1.getCodigoFicha();
-        */
+
         agregarDatos();
         generarficha();
     }//GEN-LAST:event_jButton7ActionPerformed
@@ -574,7 +550,6 @@ public class DatosCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;

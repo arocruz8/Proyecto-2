@@ -1,41 +1,50 @@
 package colas_prioridad;
-public class Nodo {
-    public Object elemento;
-    public int prioridad;
-    public Nodo sig;
-
-    //constructores
-    public Nodo(Object elemento, int prioridad, Nodo sig) {
-        this.elemento = elemento;
+public class Nodo<cliente> {
+    private cliente dato;
+    private int prioridad;
+    private Nodo<cliente> anterior;
+    private Nodo<cliente> siguiente;
+    
+    //constructor
+    public Nodo(int prioridad, cliente dato){
+        //this.dato = dato;
         this.prioridad = prioridad;
-        this.sig = sig;
+        this.dato = dato;
+        this.anterior = null;
+        this.siguiente = null;
     }
-
-    public Nodo(){
+    
+    public void serPrioridad(int prioridad){
+        this.prioridad=prioridad;    
     }
-
-    //setter and getters
-    public Object getElemento() {
-        return elemento;
+    
+    public int getPrioridad(){
+        return this.prioridad;
     }
-
-    public void setElemento(Object elemento) {
-        this.elemento = elemento;
+    
+    public cliente getDato(){  
+        return this.dato;
     }
-
-    public int getPrioridad() {
-        return prioridad;
+    
+    public void setDato(cliente dato){   
+        this.dato = dato;
     }
-
-    public void setPrioridad(int prioridad) {
-        this.prioridad = prioridad;
+    
+    public Nodo<cliente> getAnterior(){  
+        return this.anterior;
     }
-
-    public Nodo getSig() {
-        return sig;
+    
+    public void setAnterior(Nodo<cliente> anterior){  
+        this.anterior = anterior;
     }
+    
+    public Nodo<cliente> getSiguiente() {
+        return this.siguiente;
+    }
+    
+    public void setSiguiente(Nodo<cliente> siguiente) {
+        this.siguiente = siguiente;
+    }
+    
 
-    public void setSig(Nodo sig) {
-        this.sig = sig;
-    }     
 }

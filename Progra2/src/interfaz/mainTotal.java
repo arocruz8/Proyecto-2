@@ -6,6 +6,7 @@ public class mainTotal {
         //DatosCliente ventana = new DatosCliente();
         //ventana.setVisible(true);
         Interfaz_inicio v1 = new Interfaz_inicio();
+        v1.setTitle("INICIO");
         v1.setVisible(true);
     }
 }
