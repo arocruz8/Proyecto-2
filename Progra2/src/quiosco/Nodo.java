@@ -57,23 +57,27 @@ public class Nodo<cliente> {
         this.siguiente = null;
     }
     
-    public int getPrioridad() {
+    public void serPrioridad(int prioridad){
+        this.prioridad=prioridad;    
+    }
+    
+    public int getPrioridad(){
         return this.prioridad;
     }
     
-    public cliente getDato() {  
+    public cliente getDato(){  
         return this.dato;
     }
     
-    public void setDato(cliente dato) {   
+    public void setDato(cliente dato){   
         this.dato = dato;
     }
     
-    public Nodo<cliente> getAnterior() {  
+    public Nodo<cliente> getAnterior(){  
         return this.anterior;
     }
     
-    public void setAnterior(Nodo<cliente> anterior) {  
+    public void setAnterior(Nodo<cliente> anterior){  
         this.anterior = anterior;
     }
     

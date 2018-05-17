@@ -1,7 +1,5 @@
 package interfaz;
-
 import quiosco.*;
-
 
 public class DatosCliente extends javax.swing.JFrame {
     
