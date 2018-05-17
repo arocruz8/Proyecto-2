@@ -37,7 +37,8 @@ public class DatosCliente extends javax.swing.JFrame {
         data.setPrioridad(prioridad);
 
         int priority = prioridad;
-        c1.insertar(data, priority);
+        //c1.insertar(data, priority);
+        c1.agregar(priority, data);
     }
     
     public void mostrar(){
