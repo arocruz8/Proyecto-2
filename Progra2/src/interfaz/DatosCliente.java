@@ -18,8 +18,60 @@ public class DatosCliente extends javax.swing.JFrame {
     public static String tipoUsuario;
     
     //cliente info = new cliente();
-    public DatosCliente() {
+    public DatosCliente(int contador_colaP,int contador_heapP,int contador_colaNP,int contador_heapNP) {
         initComponents();
+        /**
+         * Los labels y los botones se muestran dependiendo de cuantas ventanas se hayan solicitado
+         */
+        if(contador_colaP>=1|contador_heapP>=1){
+            Ventana1PLabel.setVisible(true);
+            BotonVentana1P.setVisible(true);
+        }
+        else{
+            Ventana1PLabel.setVisible(false);
+            BotonVentana1P.setVisible(false);
+        }
+        if(contador_colaP>=2|contador_heapP>=2){
+            Ventana2PLabel.setVisible(true);
+            BotonVentana2P.setVisible(true);
+        }
+        else{
+            Ventana2PLabel.setVisible(false);
+            BotonVentana2P.setVisible(false);
+        }
+        if(contador_colaP>=3|contador_heapP>=3){
+            Ventana3PLabel.setVisible(true);
+            BotonVentana3P.setVisible(true);
+        }
+        else{
+            Ventana3PLabel.setVisible(false);
+            BotonVentana3P.setVisible(false);
+        }
+        
+        if(contador_colaNP>=1|contador_heapNP>=1){
+            Ventana1NPLabel.setVisible(true);
+            BotonVentana1NP.setVisible(true);
+        }
+        else{
+            Ventana1NPLabel.setVisible(false);
+            BotonVentana1NP.setVisible(false);
+        }
+        if(contador_colaNP>=2|contador_heapNP>=2){
+            Ventana2NPLabel.setVisible(true);
+            BotonVentana2NP.setVisible(true);
+        }
+        else{
+            Ventana2NPLabel.setVisible(false);
+            BotonVentana2NP.setVisible(false);
+        }
+        if(contador_colaNP>=3|contador_heapNP>=3){
+            Ventana3NPLabel.setVisible(true);
+            BotonVentana3NP.setVisible(true);
+        }
+        else{
+            Ventana3NPLabel.setVisible(false);
+            BotonVentana3NP.setVisible(false);
+        }
     }
     
     public void agregarDatos(){
@@ -86,18 +138,18 @@ public class DatosCliente extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
+        BotonVentana1P = new javax.swing.JButton();
+        BotonVentana2P = new javax.swing.JButton();
+        BotonVentana3P = new javax.swing.JButton();
+        BotonVentana1NP = new javax.swing.JButton();
+        BotonVentana2NP = new javax.swing.JButton();
+        BotonVentana3NP = new javax.swing.JButton();
+        Ventana1PLabel = new javax.swing.JLabel();
+        Ventana2PLabel = new javax.swing.JLabel();
+        Ventana3PLabel = new javax.swing.JLabel();
+        Ventana3NPLabel = new javax.swing.JLabel();
+        Ventana2NPLabel = new javax.swing.JLabel();
+        Ventana1NPLabel = new javax.swing.JLabel();
         panel3 = new java.awt.Panel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -255,29 +307,34 @@ public class DatosCliente extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setText("No perecedero");
 
-        jButton4.setText("jButton4");
+        BotonVentana1P.setText("jButton4");
+        BotonVentana1P.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVentana1PActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("jButton5");
+        BotonVentana2P.setText("jButton5");
 
-        jButton6.setText("jButton6");
+        BotonVentana3P.setText("jButton6");
 
-        jButton8.setText("jButton8");
+        BotonVentana1NP.setText("jButton8");
 
-        jButton9.setText("jButton9");
+        BotonVentana2NP.setText("jButton9");
 
-        jButton10.setText("jButton10");
+        BotonVentana3NP.setText("jButton10");
 
-        jLabel20.setText("jLabel20");
+        Ventana1PLabel.setText("Ventana 1");
 
-        jLabel21.setText("jLabel21");
+        Ventana2PLabel.setText("Ventana 2");
 
-        jLabel22.setText("jLabel22");
+        Ventana3PLabel.setText("Ventana 3");
 
-        jLabel23.setText("jLabel23");
+        Ventana3NPLabel.setText("Ventana 3");
 
-        jLabel24.setText("jLabel24");
+        Ventana2NPLabel.setText("Ventana 2");
 
-        jLabel25.setText("jLabel25");
+        Ventana1NPLabel.setText("Ventana 1");
 
         javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
@@ -287,43 +344,47 @@ public class DatosCliente extends javax.swing.JFrame {
                 .addGap(49, 49, 49)
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel2Layout.createSequentialGroup()
-                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(44, 44, 44)
+                        .addComponent(Ventana1NPLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Ventana2NPLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(102, 102, 102)
+                        .addComponent(Ventana3NPLabel)
+                        .addGap(71, 71, 71))
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4)
-                            .addComponent(jButton8))
-                        .addGap(121, 121, 121)
-                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(54, 54, 54))))
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel8))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(panel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panel2Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(jLabel20)
-                .addGap(151, 151, 151)
-                .addComponent(jLabel21)
+                .addGap(94, 94, 94)
+                .addComponent(Ventana1PLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel22)
+                .addComponent(Ventana2PLabel)
+                .addGap(121, 121, 121)
+                .addComponent(Ventana3PLabel)
                 .addGap(75, 75, 75))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jLabel25)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(BotonVentana1P))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(BotonVentana1NP)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel24)
-                .addGap(158, 158, 158)
-                .addComponent(jLabel23)
-                .addGap(71, 71, 71))
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonVentana2P, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BotonVentana2NP, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(106, 106, 106)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonVentana3P)
+                    .addComponent(BotonVentana3NP))
+                .addGap(48, 48, 48))
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,27 +395,31 @@ public class DatosCliente extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addGap(18, 18, 18)
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel22))
+                    .addComponent(Ventana1PLabel)
+                    .addComponent(Ventana2PLabel)
+                    .addComponent(Ventana3PLabel))
                 .addGap(32, 32, 32)
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4)
-                    .addComponent(jButton6))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel9)
+                    .addComponent(BotonVentana2P)
+                    .addComponent(BotonVentana1P)
+                    .addComponent(BotonVentana3P))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel25))
-                .addGap(32, 32, 32)
-                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8)
-                    .addComponent(jButton9)
-                    .addComponent(jButton10))
-                .addGap(24, 24, 24))
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotonVentana3NP)
+                            .addComponent(BotonVentana1NP))
+                        .addGap(34, 34, 34))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Ventana3NPLabel)
+                            .addComponent(Ventana2NPLabel)
+                            .addComponent(Ventana1NPLabel))
+                        .addGap(18, 18, 18)
+                        .addComponent(BotonVentana2NP)
+                        .addGap(38, 38, 38))))
         );
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -445,7 +510,7 @@ public class DatosCliente extends javax.swing.JFrame {
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14)
                     .addGroup(panel4Layout.createSequentialGroup()
@@ -547,18 +612,28 @@ public class DatosCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextPrioriadadActionPerformed
 
+    private void BotonVentana1PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentana1PActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonVentana1PActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonVentana1NP;
+    private javax.swing.JButton BotonVentana1P;
+    private javax.swing.JButton BotonVentana2NP;
+    private javax.swing.JButton BotonVentana2P;
+    private javax.swing.JButton BotonVentana3NP;
+    private javax.swing.JButton BotonVentana3P;
+    private javax.swing.JLabel Ventana1NPLabel;
+    private javax.swing.JLabel Ventana1PLabel;
+    private javax.swing.JLabel Ventana2NPLabel;
+    private javax.swing.JLabel Ventana2PLabel;
+    private javax.swing.JLabel Ventana3NPLabel;
+    private javax.swing.JLabel Ventana3PLabel;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -571,12 +646,6 @@ public class DatosCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
