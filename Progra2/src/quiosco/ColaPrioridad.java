@@ -95,22 +95,4 @@ public class ColaPrioridad extends cliente{
             System.out.println("");
     }
         
-    /**
-     * busca en la cola
-     * @param elemento
-     * @return
-     */
-    public boolean buscar(Object elemento){
-        Nodo aux = cola;
-        boolean existe = false;
-        while(existe != true && aux != null){
-            if (elemento== aux.getElemento()) {
-                existe = true;
-            }
-            else{
-                aux = aux.sig;
-            }
-        }
-        return existe;
-    }
 }
