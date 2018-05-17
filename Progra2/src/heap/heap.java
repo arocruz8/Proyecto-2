@@ -3,12 +3,10 @@ package heap;
 import java.util.ArrayList;
 import java.util.Collection;
 
+public class heap<T extends Comparable<T>> {
 
-public abstract class heap<T extends Comparable<T>> {
-
-    private ArrayList<T> Heap;
-
-    private final int sign;
+    private  ArrayList<T> Heap;
+    private final int siguiente;
 
     protected final int izquierda(int i) { return (i << 1) + 1; }
     protected final int derecha(int i) { return (i << 1) + 2; }
@@ -18,9 +16,9 @@ public abstract class heap<T extends Comparable<T>> {
         int j = i;
         int izq = izquierda(i);
         int der = derecha(i);
-        if(izq < Heap.size() && (sign == Heap.get(izq).compareTo(Heap.get(j))))
+        if(izq < Heap.size() && (siguiente == Heap.get(izq).compareTo(Heap.get(j))))
             j = izq;
-        if(der < Heap.size() && (sign == Heap.get(der).compareTo(Heap.get(j))))
+        if(der < Heap.size() && (siguiente == Heap.get(der).compareTo(Heap.get(j))))
             j = der;
         if(j != i) {
             intercambiar(i, j);
@@ -30,12 +28,12 @@ public abstract class heap<T extends Comparable<T>> {
 
     //constructores
     public heap(int sign) {
-        this.sign = sign;
+        this.siguiente = sign;
         Heap = new ArrayList<T>();
     }
 
     public heap(int sign, Collection<T> contenido) {
-        this.sign = sign;
+        this.siguiente = sign;
         Heap = new ArrayList<T>(contenido);
         //se mueve en el heap y lo va construyendo
         for(int i = 1 + Heap.size() / 2; i >= 0; i--) {
@@ -61,7 +59,7 @@ public abstract class heap<T extends Comparable<T>> {
         Heap.add(t);
         int i = Heap.size() - 1;
         int p = padre(i);
-        while(i > 0 && (sign == Heap.get(i).compareTo(Heap.get(p)))) {
+        while(i > 0 && (siguiente == Heap.get(i).compareTo(Heap.get(p)))) {
             intercambiar(i, p);
             i = p;
             p = padre(i);
@@ -70,15 +68,16 @@ public abstract class heap<T extends Comparable<T>> {
     
     //elimina un nodo en un elemento
     public T eliminar(){
-        T result = null;
+        T resultado = null;
         if(Heap.size() > 0) {
-            result = Heap.remove(0);
+            resultado = Heap.remove(0);
             if(Heap.size() > 1) {
                 Heap.add(0, Heap.remove(Heap.size() -1));
                 heapsort(0);
             }
         }
-        return result;
+        return resultado;
     }
+ 
     
 }
