@@ -1,14 +1,14 @@
-package estructurasDatos;
-import quiosco.*;
+package quiosco;
+import estructurasDatos.*;
 
-public class heap extends paqueteInfoCliente{
+
+public class heapClientes extends cliente{
     private paqueteInfoCliente[] heap;
     private int tamañoHeap;
-    private final int capacidad;
-    public cliente data = new cliente();
+    private int capacidad;
     
     //constructor
-    public heap(int capacidad){
+    public heapClientes(int capacidad){
         this.capacidad=capacidad+1;
         heap = new paqueteInfoCliente[this.capacidad];
         tamañoHeap=0;
@@ -36,7 +36,7 @@ public class heap extends paqueteInfoCliente{
     }
     
     //función que agrega a la cola de los paquetes
-    public void añadir(cliente data, int prioridad){
+   public void añadir(cliente data, int prioridad){
         paqueteInfoCliente nuevoPaquete = new paqueteInfoCliente(data, prioridad);
         
         heap[++tamañoHeap] = nuevoPaquete;
@@ -48,6 +48,7 @@ public class heap extends paqueteInfoCliente{
         }
         heap[pos] = nuevoPaquete;
     }
+    
     
     //función que elimina el paquete 
     public paqueteInfoCliente eliminar(){

@@ -1,9 +1,11 @@
 package interfaz;
 import quiosco.*;
+import estructurasDatos.*;
 
 public class DatosCliente extends javax.swing.JFrame {
     
     ColaPrioridad c1 = new ColaPrioridad();
+    heap h1 = new heap(10);
     
     //atributos clientes
     public static String nombre;
@@ -35,8 +37,9 @@ public class DatosCliente extends javax.swing.JFrame {
         data.setPrioridad(prioridad);
 
         int priority = prioridad;
-        //c1.insertar(data, priority);
+        
         c1.agregar(priority, data);
+        h1.añadir(data, priority);
     }
     
     public void mostrar(){
@@ -536,7 +539,6 @@ public class DatosCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-
         agregarDatos();
         generarficha();
     }//GEN-LAST:event_jButton7ActionPerformed
