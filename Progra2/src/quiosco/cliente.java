@@ -68,7 +68,7 @@ public class cliente{
         this.tipo_usuario=tipo_usuario;
         this.tipo_paquete=tipo_paquete;
         this.prioridad=prioridad;
-        this.fi=null;
+        this.fi=fi;
     }
     
     
