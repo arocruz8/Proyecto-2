@@ -315,22 +315,22 @@ public class DatosCliente extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setText("No perecedero");
 
-        BotonVentana1P.setText("jButton4");
+        BotonVentana1P.setText("Atender");
         BotonVentana1P.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonVentana1PActionPerformed(evt);
             }
         });
 
-        BotonVentana2P.setText("jButton5");
+        BotonVentana2P.setText("Atender");
 
-        BotonVentana3P.setText("jButton6");
+        BotonVentana3P.setText("Atender");
 
-        BotonVentana1NP.setText("jButton8");
+        BotonVentana1NP.setText("Atender");
 
-        BotonVentana2NP.setText("jButton9");
+        BotonVentana2NP.setText("Atender");
 
-        BotonVentana3NP.setText("jButton10");
+        BotonVentana3NP.setText("Atender");
 
         Ventana1PLabel.setText("Ventana 1");
 
@@ -349,50 +349,46 @@ public class DatosCliente extends javax.swing.JFrame {
         panel2Layout.setHorizontalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel2Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel2Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(Ventana1NPLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Ventana2NPLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(102, 102, 102)
-                        .addComponent(Ventana3NPLabel)
-                        .addGap(71, 71, 71))
+                        .addGap(49, 49, 49)
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panel2Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(Ventana1NPLabel)
+                                .addGap(97, 97, 97)
+                                .addComponent(Ventana2NPLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(80, 80, 80)
+                                .addComponent(Ventana3NPLabel))
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel8)))
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel8))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(panel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
+                            .addGroup(panel2Layout.createSequentialGroup()
+                                .addGap(81, 81, 81)
+                                .addComponent(BotonVentana1P))
+                            .addGroup(panel2Layout.createSequentialGroup()
+                                .addGap(77, 77, 77)
+                                .addComponent(BotonVentana1NP)))
+                        .addGap(74, 74, 74)
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BotonVentana2P)
+                            .addComponent(BotonVentana2NP))
+                        .addGap(82, 82, 82)
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BotonVentana3NP)
+                            .addComponent(BotonVentana3P)))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(Ventana1PLabel)
+                        .addGap(97, 97, 97)
+                        .addComponent(Ventana2PLabel)
+                        .addGap(105, 105, 105)
+                        .addComponent(Ventana3PLabel)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panel2Layout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addComponent(Ventana1PLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Ventana2PLabel)
-                .addGap(121, 121, 121)
-                .addComponent(Ventana3PLabel)
-                .addGap(75, 75, 75))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
-                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel2Layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(BotonVentana1P))
-                    .addGroup(panel2Layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(BotonVentana1NP)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotonVentana2P, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BotonVentana2NP, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(106, 106, 106)
-                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotonVentana3P)
-                    .addComponent(BotonVentana3NP))
-                .addGap(48, 48, 48))
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -418,16 +414,15 @@ public class DatosCliente extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
                         .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BotonVentana3NP)
-                            .addComponent(BotonVentana1NP))
+                            .addComponent(BotonVentana1NP)
+                            .addComponent(BotonVentana2NP))
                         .addGap(34, 34, 34))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
                         .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Ventana3NPLabel)
                             .addComponent(Ventana2NPLabel)
                             .addComponent(Ventana1NPLabel))
-                        .addGap(18, 18, 18)
-                        .addComponent(BotonVentana2NP)
-                        .addGap(38, 38, 38))))
+                        .addGap(79, 79, 79))))
         );
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
