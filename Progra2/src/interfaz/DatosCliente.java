@@ -18,6 +18,13 @@ public class DatosCliente extends javax.swing.JFrame {
     public static String tipoUsuario;
     
     //cliente info = new cliente();
+    
+    //constructores
+    public DatosCliente(){
+       initComponents();
+    }
+    
+    
     public DatosCliente(int contador_colaP,int contador_heapP,int contador_colaNP,int contador_heapNP) {
         initComponents();
         /**
@@ -96,6 +103,7 @@ public class DatosCliente extends javax.swing.JFrame {
     
     public void mostrar(){
         c1.imprimir();
+        System.out.println(h1.tamañoArreglo());
     }
     
     public void generarficha(){

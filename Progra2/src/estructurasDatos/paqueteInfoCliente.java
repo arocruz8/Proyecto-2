@@ -15,9 +15,10 @@ public class paqueteInfoCliente extends cliente{
     }
     
     //to string
+
     @Override
     public String toString() {
-        return "paqueteInfo{" + "tipo=" + data + ", prioridad=" + prioridad + '}';
+        return "paqueteInfoCliente{" + "data=" + data + ", prioridad=" + prioridad + '}';
     }
     
 }
