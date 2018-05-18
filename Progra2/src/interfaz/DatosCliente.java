@@ -1,6 +1,8 @@
 package interfaz;
 import quiosco.*;
 import estructurasDatos.*;
+import colas_prioridad.*;
+import javax.swing.JOptionPane;
 
 public class DatosCliente extends javax.swing.JFrame {
     
@@ -616,7 +618,9 @@ public class DatosCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextPrioriadadActionPerformed
 
     private void BotonVentana1PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentana1PActionPerformed
-        // TODO add your handling code here:
+        cliente info=(cliente) c1.desacolar();
+        JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 1");
+        
     }//GEN-LAST:event_BotonVentana1PActionPerformed
 
 
