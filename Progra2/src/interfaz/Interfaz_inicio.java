@@ -1,6 +1,11 @@
 package interfaz;
 public class Interfaz_inicio extends javax.swing.JFrame {
 
+    public int contador_colaP;
+    public int contador_colaNP=0;
+    public int contador_heapP=0;
+    public int contador_heapNP=0;
+
     /**
      * Creates new form Interfaz_inicio
      */
@@ -52,8 +57,18 @@ public class Interfaz_inicio extends javax.swing.JFrame {
 
         jButton1.setText("COLA");
         jButton1.setToolTipText("");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("HEAP");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Control de clientes");
@@ -171,18 +186,26 @@ public class Interfaz_inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        DatosCliente dt = new DatosCliente();
+        DatosCliente dt = new DatosCliente(contador_colaP,contador_heapP,contador_colaNP,contador_heapNP);
         dt.setVisible(true);
         dt.setTitle("Control de entregas");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        contador_colaNP++;
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        contador_heapNP++;
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        contador_colaP++;
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        contador_heapP++;
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
