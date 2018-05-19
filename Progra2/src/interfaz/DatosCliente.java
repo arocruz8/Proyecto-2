@@ -649,8 +649,14 @@ public class DatosCliente extends javax.swing.JFrame {
             cliente info=(cliente) c1.desacolar();
             h1.eliminar();
             JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 1");
-            int proridad=info.getPrioridad();
-            colaSeguridad.agregar(proridad, info);
+            int prioridad=4;
+            if("P".equals(info.getTipo_paquete())|"p".equals(info.getTipo_paquete())){
+                prioridad=1;
+            }
+            if("NP".equals(info.getTipo_paquete())|"np".equals(info.getTipo_paquete())){
+                prioridad=2;
+            }
+            colaSeguridad.agregar(prioridad, info);
         }
         else{
             BotonVentana1P.setText("Atender");
@@ -663,8 +669,14 @@ public class DatosCliente extends javax.swing.JFrame {
             cliente info=(cliente) c1.desacolar();
             h1.eliminar();
             JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 2");
-            int proridad=info.getPrioridad();
-            colaSeguridad.agregar(proridad, info);
+            int prioridad=4;
+            if("P".equals(info.getTipo_paquete())|"p".equals(info.getTipo_paquete())){
+                prioridad=1;
+            }
+            if("NP".equals(info.getTipo_paquete())|"np".equals(info.getTipo_paquete())){
+                prioridad=2;
+            }
+            colaSeguridad.agregar(prioridad, info);
         }
         else{
             BotonVentana2P.setText("Atender");
@@ -677,8 +689,14 @@ public class DatosCliente extends javax.swing.JFrame {
             cliente info=(cliente) c1.desacolar();
             h1.eliminar();
             JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 3");
-            int proridad=info.getPrioridad();
-            colaSeguridad.agregar(proridad, info);
+            int prioridad=4;
+            if("P".equals(info.getTipo_paquete())|"p".equals(info.getTipo_paquete())){
+                prioridad=1;
+            }
+            if("NP".equals(info.getTipo_paquete())|"np".equals(info.getTipo_paquete())){
+                prioridad=2;
+            }
+            colaSeguridad.agregar(prioridad, info);
         }
         else{
             BotonVentana3P.setText("Atender");
@@ -691,8 +709,14 @@ public class DatosCliente extends javax.swing.JFrame {
             cliente info=(cliente) c1.desacolar();
             h1.eliminar();
             JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 1");
-            int proridad=info.getPrioridad();
-            colaSeguridad.agregar(proridad, info);
+            int prioridad=4;
+            if("P".equals(info.getTipo_paquete())|"p".equals(info.getTipo_paquete())){
+                prioridad=1;
+            }
+            if("NP".equals(info.getTipo_paquete())|"np".equals(info.getTipo_paquete())){
+                prioridad=2;
+            }
+            colaSeguridad.agregar(prioridad, info);
         }
         else{
             BotonVentana1NP.setText("Atender");
@@ -705,8 +729,14 @@ public class DatosCliente extends javax.swing.JFrame {
             cliente info=(cliente) c1.desacolar();
             h1.eliminar();
             JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 1");
-            int proridad=info.getPrioridad();
-            colaSeguridad.agregar(proridad, info);
+            int prioridad=4;
+            if("P".equals(info.getTipo_paquete())|"p".equals(info.getTipo_paquete())){
+                prioridad=1;
+            }
+            if("NP".equals(info.getTipo_paquete())|"np".equals(info.getTipo_paquete())){
+                prioridad=2;
+            }
+            colaSeguridad.agregar(prioridad, info);
         }
         else{
             BotonVentana2NP.setText("Atender");
@@ -719,8 +749,14 @@ public class DatosCliente extends javax.swing.JFrame {
             cliente info=(cliente) c1.desacolar();
             h1.eliminar();
             JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 1");
-            int proridad=info.getPrioridad();
-            colaSeguridad.agregar(proridad, info);
+            int prioridad=4;
+            if("P".equals(info.getTipo_paquete())|"p".equals(info.getTipo_paquete())){
+                prioridad=1;
+            }
+            if("NP".equals(info.getTipo_paquete())|"np".equals(info.getTipo_paquete())){
+                prioridad=2;
+            }
+            colaSeguridad.agregar(prioridad, info);
         }
         else{
             BotonVentana3NP.setText("Atender");
