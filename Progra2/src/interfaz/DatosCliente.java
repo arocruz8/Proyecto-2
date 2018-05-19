@@ -15,12 +15,19 @@ public class DatosCliente extends javax.swing.JFrame {
     public static String correo;
     public static String tipo_usuario;
     public static String tipo_paquete;
+    public static int prioridad;
     
     //atributos ficha
     public static String tipoPaquete;
     public static String tipoUsuario;
     
-    //cliente info = new cliente();
+    //contadores
+    public static int totalDiscapacidad;
+    public static int totalEmbarazadas;
+    public static int totalRegulares;
+    public static int totalAdultoMayor;
+    public static int totalPerecederos;
+    public static int totalNoPerecederos;
     
     //constructores
     public DatosCliente(){
@@ -88,9 +95,8 @@ public class DatosCliente extends javax.swing.JFrame {
         cliente data = new cliente();
         nombre=jTextNombre.getText();
         correo=jTextCorreo.getText();
-        tipo_usuario=jTextUsuario.getText();
-        tipo_paquete=jTextPaquete.getText();
-        int prioridad=Integer.parseInt(jTextPrioriadad.getText());
+        //tipo_usuario=jTextUsuario.getText();
+        //tipo_paquete=jTextPaquete.getText();
         
         data.setNombre(nombre);
         data.setCorreo(correo);
@@ -111,8 +117,8 @@ public class DatosCliente extends javax.swing.JFrame {
     
     public void generarficha(){
         ficha f =new ficha(tipoPaquete, tipoUsuario);
-        tipoPaquete = jTextPaquete.getText();
-        tipoUsuario = jTextUsuario.getText();
+        tipoPaquete = tipo_paquete;
+        tipoUsuario = tipo_usuario;
         
         f.setTipoPaquete(tipoPaquete);
         f.setTipoUsuario(tipoUsuario);
@@ -130,21 +136,20 @@ public class DatosCliente extends javax.swing.JFrame {
 
         panel1 = new java.awt.Panel();
         jLabelPaquete = new javax.swing.JLabel();
-        jTextPaquete = new javax.swing.JTextField();
         jLabelUsuario = new javax.swing.JLabel();
-        jTextUsuario = new javax.swing.JTextField();
         jLabelCorreo = new javax.swing.JLabel();
         jTextCorreo = new javax.swing.JTextField();
         jTextNombre = new javax.swing.JTextField();
         jLabelNombre = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jTextPrioriadad = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
-        jLabel19 = new javax.swing.JLabel();
+        BotonDiscapacidad = new javax.swing.JButton();
+        BotonAdultoMayor = new javax.swing.JButton();
+        BotonEmbarazada = new javax.swing.JButton();
+        BotonRegular = new javax.swing.JButton();
+        BotonPerecedero = new javax.swing.JButton();
+        BotonNoPerecedero = new javax.swing.JButton();
         panel2 = new java.awt.Panel();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -204,18 +209,6 @@ public class DatosCliente extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Prioridad");
-
-        jTextPrioriadad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextPrioriadadActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setText("discapacidad [D], adulto mayor [M], mujer embarazada [E], cliente regular [R])");
-
-        jLabel7.setText("D->1, M->2, E->3, R->4");
-
         jButton7.setText("Generar Ficha");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,7 +216,47 @@ public class DatosCliente extends javax.swing.JFrame {
             }
         });
 
-        jLabel19.setText("NP -> no percederos y P -> percederos");
+        BotonDiscapacidad.setText("Discapacitado");
+        BotonDiscapacidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonDiscapacidadActionPerformed(evt);
+            }
+        });
+
+        BotonAdultoMayor.setText("Adulto Mayor");
+        BotonAdultoMayor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAdultoMayorActionPerformed(evt);
+            }
+        });
+
+        BotonEmbarazada.setText("Embarazada");
+        BotonEmbarazada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEmbarazadaActionPerformed(evt);
+            }
+        });
+
+        BotonRegular.setText("Regular");
+        BotonRegular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRegularActionPerformed(evt);
+            }
+        });
+
+        BotonPerecedero.setText("Perecedero");
+        BotonPerecedero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonPerecederoActionPerformed(evt);
+            }
+        });
+
+        BotonNoPerecedero.setText("No Perecedero");
+        BotonNoPerecedero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonNoPerecederoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
@@ -232,44 +265,45 @@ public class DatosCliente extends javax.swing.JFrame {
             .addGroup(panel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton7)
-                        .addGap(36, 36, 36))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(63, 349, Short.MAX_VALUE))
-                    .addGroup(panel1Layout.createSequentialGroup()
-                        .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panel1Layout.createSequentialGroup()
+                            .addComponent(jLabelPaquete)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(BotonPerecedero)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(BotonNoPerecedero)
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(panel1Layout.createSequentialGroup()
                             .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(panel1Layout.createSequentialGroup()
-                                    .addComponent(jLabelUsuario)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(panel1Layout.createSequentialGroup()
-                                    .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabelCorreo)
-                                        .addComponent(jLabelNombre))
-                                    .addGap(36, 36, 36)
-                                    .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLabel7)
-                            .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(panel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(jTextPrioriadad, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(panel1Layout.createSequentialGroup()
-                                        .addComponent(jLabelPaquete)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(jLabelCorreo)
+                                .addComponent(jLabelNombre))
+                            .addGap(36, 36, 36)
+                            .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
+                                .addComponent(jButton3)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton7)
+                                .addGap(36, 36, 36))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
+                                .addComponent(jLabelUsuario)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(BotonDiscapacidad)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BotonAdultoMayor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BotonEmbarazada)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BotonRegular)
+                                .addGap(64, 64, 64))))))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,25 +318,19 @@ public class DatosCliente extends javax.swing.JFrame {
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelCorreo)
                     .addComponent(jTextCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(17, 17, 17)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelUsuario)
-                    .addComponent(jTextUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(BotonDiscapacidad)
+                    .addComponent(BotonAdultoMayor)
+                    .addComponent(BotonEmbarazada)
+                    .addComponent(BotonRegular))
+                .addGap(26, 26, 26)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelPaquete))
+                    .addComponent(jLabelPaquete)
+                    .addComponent(BotonPerecedero)
+                    .addComponent(BotonNoPerecedero))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel19)
-                .addGap(18, 18, 18)
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextPrioriadad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(jButton7))
@@ -435,7 +463,7 @@ public class DatosCliente extends javax.swing.JFrame {
                     .addComponent(BotonVentana2P)
                     .addComponent(BotonVentana1P)
                     .addComponent(BotonVentana3P))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -541,7 +569,7 @@ public class DatosCliente extends javax.swing.JFrame {
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14)
                     .addGroup(panel4Layout.createSequentialGroup()
@@ -638,10 +666,6 @@ public class DatosCliente extends javax.swing.JFrame {
         agregarDatos();
         generarficha();
     }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jTextPrioriadadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPrioriadadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextPrioriadadActionPerformed
 
     private void BotonVentana1PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentana1PActionPerformed
         if(c1.estaVacia()==false){
@@ -763,9 +787,49 @@ public class DatosCliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BotonVentana3NPActionPerformed
 
+    private void BotonDiscapacidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDiscapacidadActionPerformed
+        tipo_usuario="D";
+        prioridad=1;
+        totalDiscapacidad++;
+    }//GEN-LAST:event_BotonDiscapacidadActionPerformed
+
+    private void BotonAdultoMayorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAdultoMayorActionPerformed
+        tipo_usuario="M";
+        prioridad=2;
+        totalAdultoMayor++;
+    }//GEN-LAST:event_BotonAdultoMayorActionPerformed
+
+    private void BotonEmbarazadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEmbarazadaActionPerformed
+        tipo_usuario="E";
+        prioridad=3;
+        totalEmbarazadas++;
+    }//GEN-LAST:event_BotonEmbarazadaActionPerformed
+
+    private void BotonRegularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegularActionPerformed
+        tipo_usuario="R";
+        prioridad=4;
+        totalRegulares++;
+    }//GEN-LAST:event_BotonRegularActionPerformed
+
+    private void BotonPerecederoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPerecederoActionPerformed
+        tipo_paquete="P";
+        totalPerecederos++;
+    }//GEN-LAST:event_BotonPerecederoActionPerformed
+
+    private void BotonNoPerecederoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonNoPerecederoActionPerformed
+        tipo_paquete="NP";
+        totalNoPerecederos++;
+    }//GEN-LAST:event_BotonNoPerecederoActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonAdultoMayor;
+    private javax.swing.JButton BotonDiscapacidad;
+    private javax.swing.JButton BotonEmbarazada;
+    private javax.swing.JButton BotonNoPerecedero;
+    private javax.swing.JButton BotonPerecedero;
+    private javax.swing.JButton BotonRegular;
     private javax.swing.JButton BotonVentana1NP;
     private javax.swing.JButton BotonVentana1P;
     private javax.swing.JButton BotonVentana2NP;
@@ -791,13 +855,9 @@ public class DatosCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelCorreo;
@@ -814,9 +874,6 @@ public class DatosCliente extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField jTextNombre;
-    private javax.swing.JTextField jTextPaquete;
-    private javax.swing.JTextField jTextPrioriadad;
-    private javax.swing.JTextField jTextUsuario;
     private java.awt.Panel panel1;
     private java.awt.Panel panel2;
     private java.awt.Panel panel3;
