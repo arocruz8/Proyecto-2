@@ -1,4 +1,4 @@
-package quiosco;
+ package quiosco;
 public class ficha extends cliente{
     private String codigoFicha;
     private String tipoPaquete;
@@ -6,7 +6,11 @@ public class ficha extends cliente{
     private static int numFicha;
     private static int fichasP;
     private static int fichasNP;
-   
+
+    public ficha() {
+    }
+    
+
     public ficha(String tipoPaquete, String tipoUsuario) {
         this.tipoPaquete = tipoPaquete;
         this.tipoUsuario = tipoUsuario;
@@ -22,9 +26,8 @@ public class ficha extends cliente{
             this.fichasNP++;
         }
     }
-    
 
-    public String getCodigoFicha(){
+    public String getCodigoFicha() {
         return codigoFicha;
     }
 
@@ -71,12 +74,6 @@ public class ficha extends cliente{
     public void setFichasNP(int fichasNP) {
         ficha.fichasNP = fichasNP;
     }
-
-    @Override
-    public String toString() {
-        return "ficha{" + "codigoFicha=" + codigoFicha + '}';
-    }
-    
     
     public static void main(String[] args){
         ficha ficha1=new ficha("NP", "D");
