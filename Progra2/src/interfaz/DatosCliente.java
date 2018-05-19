@@ -14,6 +14,7 @@ public class DatosCliente extends javax.swing.JFrame{
     heap h2 = new heap(20);
     heap h1 = new heap(20);
     ColaPrioridad colaSeguridad= new ColaPrioridad();
+    ColaPrioridad colaFichas = new ColaPrioridad();
     
     //atributos clientes
     public static String nombre;
@@ -154,6 +155,7 @@ public class DatosCliente extends javax.swing.JFrame{
         
         ventanaFicha vf = new ventanaFicha(tipoPaquete, tipoUsuario);
         vf.setVisible(true);
+        colaFichas.agregar(prioridad, f);
     }
     
     @SuppressWarnings("unchecked")
@@ -176,6 +178,7 @@ public class DatosCliente extends javax.swing.JFrame{
         BotonRegular = new javax.swing.JButton();
         BotonPerecedero = new javax.swing.JButton();
         BotonNoPerecedero = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         panel2 = new java.awt.Panel();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -297,6 +300,13 @@ public class DatosCliente extends javax.swing.JFrame{
             }
         });
 
+        jButton2.setText("Ver Cola de Fichas");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
         panel1Layout.setHorizontalGroup(
@@ -317,6 +327,8 @@ public class DatosCliente extends javax.swing.JFrame{
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addGap(18, 18, 18)
                                 .addComponent(jButton3)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton7)
@@ -371,7 +383,8 @@ public class DatosCliente extends javax.swing.JFrame{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton7))
+                    .addComponent(jButton7)
+                    .addComponent(jButton2))
                 .addContainerGap())
         );
 
@@ -696,17 +709,14 @@ public class DatosCliente extends javax.swing.JFrame{
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10)))
-                    .addGroup(panel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel15)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel10))
+                    .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel15)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel4Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -734,13 +744,13 @@ public class DatosCliente extends javax.swing.JFrame{
                         .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18)
                             .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel4Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(48, Short.MAX_VALUE))
                     .addGroup(panel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -960,6 +970,10 @@ public class DatosCliente extends javax.swing.JFrame{
         c1.getFrente();
     }//GEN-LAST:event_jTextField11ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        colaFichas.imprimir();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
         private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
         Xcliente.getCantM();
@@ -1023,6 +1037,7 @@ public class DatosCliente extends javax.swing.JFrame{
     private javax.swing.JLabel Ventana3NPLabel;
     private javax.swing.JLabel Ventana3PLabel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
