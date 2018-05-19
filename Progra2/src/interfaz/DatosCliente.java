@@ -10,7 +10,9 @@ public class DatosCliente extends javax.swing.JFrame{
     ficha Xficha= new ficha();
     
     ColaPrioridad c1 = new ColaPrioridad();
-    heap h1 = new heap(10);
+    ColaPrioridad c2 = new ColaPrioridad();
+    heap h2 = new heap(20);
+    heap h1 = new heap(20);
     ColaPrioridad colaSeguridad= new ColaPrioridad();
     
     //atributos clientes
@@ -32,18 +34,24 @@ public class DatosCliente extends javax.swing.JFrame{
     public static int totalPerecederos;
     public static int totalNoPerecederos;
     
+    //cola
+    public static String tipoPerecedero;
+    public static String tipoNoPerecedero;
+    
     //constructores
     public DatosCliente(){
        initComponents();
     }
     
     
-    public DatosCliente(int contador_colaP,int contador_heapP,int contador_colaNP,int contador_heapNP) {
+    public DatosCliente(String tipoP, String tipoNP, int contadorP, int contadorNP) {
         initComponents();
+        tipoPerecedero=tipoP;
+        tipoNoPerecedero=tipoNP;
         /**
          * Los labels y los botones se muestran dependiendo de cuantas ventanas se hayan solicitado
          */
-        if(contador_colaP>=1|contador_heapP>=1){
+        if(contadorP>=1){
             Ventana1PLabel.setVisible(true);
             BotonVentana1P.setVisible(true);
         }
@@ -51,7 +59,7 @@ public class DatosCliente extends javax.swing.JFrame{
             Ventana1PLabel.setVisible(false);
             BotonVentana1P.setVisible(false);
         }
-        if(contador_colaP>=2|contador_heapP>=2){
+        if(contadorP>=2){
             Ventana2PLabel.setVisible(true);
             BotonVentana2P.setVisible(true);
         }
@@ -59,7 +67,7 @@ public class DatosCliente extends javax.swing.JFrame{
             Ventana2PLabel.setVisible(false);
             BotonVentana2P.setVisible(false);
         }
-        if(contador_colaP>=3|contador_heapP>=3){
+        if(contadorP>=3){
             Ventana3PLabel.setVisible(true);
             BotonVentana3P.setVisible(true);
         }
@@ -68,7 +76,7 @@ public class DatosCliente extends javax.swing.JFrame{
             BotonVentana3P.setVisible(false);
         }
         
-        if(contador_colaNP>=1|contador_heapNP>=1){
+        if(contadorNP>=1){
             Ventana1NPLabel.setVisible(true);
             BotonVentana1NP.setVisible(true);
         }
@@ -76,7 +84,7 @@ public class DatosCliente extends javax.swing.JFrame{
             Ventana1NPLabel.setVisible(false);
             BotonVentana1NP.setVisible(false);
         }
-        if(contador_colaNP>=2|contador_heapNP>=2){
+        if(contadorNP>=2){
             Ventana2NPLabel.setVisible(true);
             BotonVentana2NP.setVisible(true);
         }
@@ -84,7 +92,7 @@ public class DatosCliente extends javax.swing.JFrame{
             Ventana2NPLabel.setVisible(false);
             BotonVentana2NP.setVisible(false);
         }
-        if(contador_colaNP>=3|contador_heapNP>=3){
+        if(contadorNP>=3){
             Ventana3NPLabel.setVisible(true);
             BotonVentana3NP.setVisible(true);
         }
@@ -109,13 +117,28 @@ public class DatosCliente extends javax.swing.JFrame{
 
         int priority = prioridad;
         
-        c1.agregar(priority, data);
-        h1.añadir(data, priority);
+        if("P".equals(tipo_paquete)){
+            if("cola".equals(tipoPerecedero)){
+                c1.agregar(priority, data);
+            }else{
+                h1.añadir(data, priority);
+            }
+        }
+        if("NP".equals(tipo_paquete)){
+            if("cola".equals(tipoNoPerecedero)){
+                c2.agregar(priority, data);
+            }else{
+                h2.añadir(data, priority);
+            }
+        }
+       
     }
     
     public void mostrar(){
         c1.imprimir();
+        c2.imprimir();
         System.out.println(h1.tamañoArreglo());
+        System.out.println(h2.tamañoArreglo());
     }
     
     public void generarficha(){
