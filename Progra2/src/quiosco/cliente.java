@@ -6,8 +6,12 @@ public class cliente{
     private String tipo_usuario;
     private String tipo_paquete;
     private int prioridad;
-  
-    ficha fi;
+    private static int cantD;
+    private static int cantM;
+    private static int cantE;
+    private static int cantR;
+    
+    private ficha fi;
     
     //setter and getters
     public String getNombre() {
@@ -50,36 +54,72 @@ public class cliente{
         this.prioridad = prioridad;
     }
 
-    public String getFi() {
-        return fi.getCodigoFicha();
+    public ficha getFi() {
+        return fi;
     }
 
     public void setFi(ficha fi) {
         this.fi = fi;
     }
 
+    public int getCantD() {
+        return cantD;
+    }
+
+    public static void setCantD(int cantD) {
+        cliente.cantD = cantD;
+    }
+
+    public int getCantM() {
+        return cantM;
+    }
+
+    public static void setCantM(int cantM) {
+        cliente.cantM = cantM;
+    }
+
+    public int getCantE() {
+        return cantE;
+    }
+
+    public static void setCantE(int cantE) {
+        cliente.cantE = cantE;
+    }
+
+    public int getCantR() {
+        return cantR;
+    }
+
+    public static void setCantR(int cantR) {
+        cliente.cantR = cantR;
+    }
     
     //constructores
-    public cliente(){
-    }
- 
+   public cliente(){
+   }
+    
     public cliente(String nombre, String correo, String tipo_usuario, String tipo_paquete, int prioridad){
         this.nombre=nombre;
         this.correo=correo;
         this.tipo_usuario=tipo_usuario;
         this.tipo_paquete=tipo_paquete;
         this.prioridad=prioridad;
-        this.fi.getCodigoFicha();
-       
+        this.fi=null;
+        if(this.tipo_usuario == "D"){
+            this.cantD++;
+        }else if(this.tipo_usuario == "M"){
+            this.cantM++;
+        }else if(this.tipo_usuario == "E"){
+            this.cantE++;
+        }else if (this.tipo_usuario == "R"){
+            this.cantR++;
+        }
     }
+    
     
     //to string
-
     @Override
     public String toString() {
-        return "cliente{" + "nombre=" + nombre + ", correo=" + correo + ", tipo_usuario=" + tipo_usuario + ", tipo_paquete=" + tipo_paquete + ", prioridad=" + prioridad + ", fi=" + fi + '}';
-    }
-  
-    
-    
+        return "cliente{" + "nombre=" + nombre + ", correo=" + correo + ", tipo_usuario=" + tipo_usuario + ", tipo_paquete=" + tipo_paquete + ", prioridad=" + prioridad + '}';
+    }    
 }
