@@ -4,7 +4,10 @@ import estructurasDatos.*;
 import colas_prioridad.*;
 import javax.swing.JOptionPane;
 
-public class DatosCliente extends javax.swing.JFrame {
+public class DatosCliente extends javax.swing.JFrame{ 
+        
+    cliente Xcliente= new cliente();
+    ficha Xficha= new ficha();
     
     ColaPrioridad c1 = new ColaPrioridad();
     heap h1 = new heap(10);
@@ -821,7 +824,48 @@ public class DatosCliente extends javax.swing.JFrame {
         totalNoPerecederos++;
     }//GEN-LAST:event_BotonNoPerecederoActionPerformed
 
+        private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        Xcliente.getCantM();
+    }                                           
 
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        Xcliente.getCantE();
+    }                                           
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        Xcliente.getCantD();
+    }                                           
+
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        Xcliente.getCantR();
+    }                                           
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        Xficha.getFichasP();
+    }                                           
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        Xficha.getFichasNP();
+    }                                           
+
+    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+         // TODO add your handling code here:
+        //v1.setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAdultoMayor;
