@@ -8,6 +8,7 @@ public class DatosCliente extends javax.swing.JFrame {
     
     ColaPrioridad c1 = new ColaPrioridad();
     heap h1 = new heap(10);
+    ColaPrioridad colaSeguridad= new ColaPrioridad();
     
     //atributos clientes
     public static String nombre;
@@ -325,14 +326,39 @@ public class DatosCliente extends javax.swing.JFrame {
         });
 
         BotonVentana2P.setText("Atender");
+        BotonVentana2P.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVentana2PActionPerformed(evt);
+            }
+        });
 
         BotonVentana3P.setText("Atender");
+        BotonVentana3P.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVentana3PActionPerformed(evt);
+            }
+        });
 
         BotonVentana1NP.setText("Atender");
+        BotonVentana1NP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVentana1NPActionPerformed(evt);
+            }
+        });
 
         BotonVentana2NP.setText("Atender");
+        BotonVentana2NP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVentana2NPActionPerformed(evt);
+            }
+        });
 
         BotonVentana3NP.setText("Atender");
+        BotonVentana3NP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVentana3NPActionPerformed(evt);
+            }
+        });
 
         Ventana1PLabel.setText("Ventana 1");
 
@@ -618,10 +644,88 @@ public class DatosCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextPrioriadadActionPerformed
 
     private void BotonVentana1PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentana1PActionPerformed
-        cliente info=(cliente) c1.desacolar();
-        JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 1");
-        
+        if(c1.estaVacia()==false){
+            BotonVentana1P.setText("Liberar y atender");
+            cliente info=(cliente) c1.desacolar();
+            h1.eliminar();
+            JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 1");
+            int proridad=info.getPrioridad();
+            colaSeguridad.agregar(proridad, info);
+        }
+        else{
+            BotonVentana1P.setText("Atender");
+        }
     }//GEN-LAST:event_BotonVentana1PActionPerformed
+
+    private void BotonVentana2PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentana2PActionPerformed
+        if(c1.estaVacia()==false){
+            BotonVentana2P.setText("Liberar y atender");
+            cliente info=(cliente) c1.desacolar();
+            h1.eliminar();
+            JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 2");
+            int proridad=info.getPrioridad();
+            colaSeguridad.agregar(proridad, info);
+        }
+        else{
+            BotonVentana2P.setText("Atender");
+        }
+    }//GEN-LAST:event_BotonVentana2PActionPerformed
+
+    private void BotonVentana3PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentana3PActionPerformed
+        if(c1.estaVacia()==false){
+            BotonVentana3P.setText("Liberar y atender");
+            cliente info=(cliente) c1.desacolar();
+            h1.eliminar();
+            JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 3");
+            int proridad=info.getPrioridad();
+            colaSeguridad.agregar(proridad, info);
+        }
+        else{
+            BotonVentana3P.setText("Atender");
+        }
+    }//GEN-LAST:event_BotonVentana3PActionPerformed
+
+    private void BotonVentana1NPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentana1NPActionPerformed
+        if(c1.estaVacia()==false){
+            BotonVentana1NP.setText("Liberar y atender");
+            cliente info=(cliente) c1.desacolar();
+            h1.eliminar();
+            JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 1");
+            int proridad=info.getPrioridad();
+            colaSeguridad.agregar(proridad, info);
+        }
+        else{
+            BotonVentana1NP.setText("Atender");
+        }
+    }//GEN-LAST:event_BotonVentana1NPActionPerformed
+
+    private void BotonVentana2NPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentana2NPActionPerformed
+        if(c1.estaVacia()==false){
+            BotonVentana2NP.setText("Liberar y atender");
+            cliente info=(cliente) c1.desacolar();
+            h1.eliminar();
+            JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 1");
+            int proridad=info.getPrioridad();
+            colaSeguridad.agregar(proridad, info);
+        }
+        else{
+            BotonVentana2NP.setText("Atender");
+        }
+    }//GEN-LAST:event_BotonVentana2NPActionPerformed
+
+    private void BotonVentana3NPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentana3NPActionPerformed
+        if(c1.estaVacia()==false){
+            BotonVentana3NP.setText("Liberar y atender");
+            cliente info=(cliente) c1.desacolar();
+            h1.eliminar();
+            JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 1");
+            int proridad=info.getPrioridad();
+            colaSeguridad.agregar(proridad, info);
+        }
+        else{
+            BotonVentana3NP.setText("Atender");
+        }
+    }//GEN-LAST:event_BotonVentana3NPActionPerformed
 
 
 

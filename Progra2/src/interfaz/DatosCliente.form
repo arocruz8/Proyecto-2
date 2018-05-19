@@ -388,26 +388,41 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Atender"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonVentana2PActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonVentana3P">
           <Properties>
             <Property name="text" type="java.lang.String" value="Atender"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonVentana3PActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonVentana1NP">
           <Properties>
             <Property name="text" type="java.lang.String" value="Atender"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonVentana1NPActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonVentana2NP">
           <Properties>
             <Property name="text" type="java.lang.String" value="Atender"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonVentana2NPActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonVentana3NP">
           <Properties>
             <Property name="text" type="java.lang.String" value="Atender"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonVentana3NPActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Ventana1PLabel">
           <Properties>
