@@ -55,11 +55,9 @@ public class heap extends paqueteInfoCliente{
         int hijo;
         paqueteInfoCliente item, temp;
         if(vacia()){
-            return null;
-        }
+            return null;}
         item = heap[1];
         temp = heap[tamañoHeap--];
-        
         padre=1;
         hijo=2;
         
@@ -67,8 +65,7 @@ public class heap extends paqueteInfoCliente{
             if(hijo < tamañoHeap && heap[hijo].prioridad < heap[hijo+1].prioridad)
                 hijo++;
             if(temp.prioridad >= heap[hijo].prioridad)
-                break;
-            
+                break;  
             heap[padre]=heap[hijo];
             padre = hijo;
             hijo *= 2;
@@ -76,5 +73,4 @@ public class heap extends paqueteInfoCliente{
         heap[padre]=temp;
         return item;
     }
-    
 }

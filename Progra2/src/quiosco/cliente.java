@@ -6,8 +6,8 @@ public class cliente{
     private String tipo_usuario;
     private String tipo_paquete;
     private int prioridad;
-    
-    private ficha fi;
+  
+    ficha fi;
     
     //setter and getters
     public String getNombre() {
@@ -50,27 +50,28 @@ public class cliente{
         this.prioridad = prioridad;
     }
 
-    public ficha getFi() {
-        return fi;
+    public String getFi() {
+        return fi.getCodigoFicha();
     }
 
     public void setFi(ficha fi) {
         this.fi = fi;
     }
+
     
     //constructores
-   public cliente(){
-   }
-    
+    public cliente(){
+    }
+ 
     public cliente(String nombre, String correo, String tipo_usuario, String tipo_paquete, int prioridad){
         this.nombre=nombre;
         this.correo=correo;
         this.tipo_usuario=tipo_usuario;
         this.tipo_paquete=tipo_paquete;
         this.prioridad=prioridad;
-        this.fi=fi;
+        this.fi.getCodigoFicha();
+       
     }
-    
     
     //to string
 
@@ -78,5 +79,7 @@ public class cliente{
     public String toString() {
         return "cliente{" + "nombre=" + nombre + ", correo=" + correo + ", tipo_usuario=" + tipo_usuario + ", tipo_paquete=" + tipo_paquete + ", prioridad=" + prioridad + ", fi=" + fi + '}';
     }
+  
+    
     
 }

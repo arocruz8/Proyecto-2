@@ -1,7 +1,7 @@
 package heap;
 import java.util.Collection;
 
-public class min_heap<T extends Comparable<T>> extends heap<T> {
+public class min_heap<T extends Comparable<T>> extends Heap<T> {
 
     public min_heap() {
 	super(-1);
