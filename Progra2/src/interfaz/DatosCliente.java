@@ -9,10 +9,12 @@ public class DatosCliente extends javax.swing.JFrame{
     cliente Xcliente= new cliente();
     ficha Xficha= new ficha();
     
+    
     ColaPrioridad c1 = new ColaPrioridad();
     ColaPrioridad c2 = new ColaPrioridad();
     heap h2 = new heap(20);
     heap h1 = new heap(20);
+    
     ColaPrioridad colaSeguridad= new ColaPrioridad();
     ColaPrioridad colaFichas = new ColaPrioridad();
     
