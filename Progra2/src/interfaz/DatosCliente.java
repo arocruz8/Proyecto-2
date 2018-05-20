@@ -812,22 +812,31 @@ public class DatosCliente extends javax.swing.JFrame{
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void BotonVentana1PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentana1PActionPerformed
-        if(c1.estaVacia()==false){
-            BotonVentana1P.setText("Liberar y atender");
-            cliente info=(cliente) c1.desacolar();
-            h1.eliminar();
-            JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 1");
-            int prioridad=4;
-            if("P".equals(info.getTipo_paquete())|"p".equals(info.getTipo_paquete())){
-                prioridad=1;
+        if("P".equals(tipo_paquete)){
+            if("cola".equals(tipoPerecedero)){
+                if(c1.estaVacia()==false){
+                    BotonVentana1P.setText("Liberar y atender");
+                    cliente info=(cliente) c1.desacolar();
+                    JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 1");
+                    int prioridad=1;
+                    colaSeguridad.agregar(prioridad, info);
+                }
+                else{
+                    BotonVentana1P.setText("Atender");
+                }
             }
-            if("NP".equals(info.getTipo_paquete())|"np".equals(info.getTipo_paquete())){
-                prioridad=2;
+            else{
+                if(h1.vacia()==false){
+                    BotonVentana1P.setText("Liberar y atender");
+                    cliente info=(cliente) h1.eliminar();
+                    JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre()+" en Ventana 1");
+                    int prioridad=1;
+                    colaSeguridad.agregar(prioridad, info);
+                }
+                else{
+                    BotonVentana1P.setText("Atender");
+                }
             }
-            colaSeguridad.agregar(prioridad, info);
-        }
-        else{
-            BotonVentana1P.setText("Atender");
         }
     }//GEN-LAST:event_BotonVentana1PActionPerformed
 
@@ -1012,10 +1021,6 @@ public class DatosCliente extends javax.swing.JFrame{
         // TODO add your handling code here:
     }                                            
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-         // TODO add your handling code here:
-        //v1.setVisible(true);
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAdultoMayor;
