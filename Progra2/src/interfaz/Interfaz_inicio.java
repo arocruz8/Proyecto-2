@@ -9,6 +9,24 @@ public class Interfaz_inicio extends javax.swing.JFrame {
     /**
      * Creates new form Interfaz_inicio
      */
+    
+    public String getTipoVentanaP() {
+        return tipoVentanaP;
+    }
+
+    public void setTipoVentanaP(String tipoVentanaP) {
+        this.tipoVentanaP = tipoVentanaP;
+    }
+
+    public String getTipoVentanaNP() {
+        return tipoVentanaNP;
+    }
+
+    public void setTipoVentanaNP(String tipoVentanaNP) {
+        this.tipoVentanaNP = tipoVentanaNP;
+    }
+    //HOLALALALALALA////
+    
     public Interfaz_inicio() {
         initComponents();
     }
