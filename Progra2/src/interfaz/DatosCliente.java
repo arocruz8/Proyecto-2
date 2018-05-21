@@ -160,7 +160,6 @@ public class DatosCliente extends javax.swing.JFrame{
         System.out.println(h1.tamañoArreglo());
         System.out.println(h2.tamañoArreglo());
         colaSeguridad.imprimir();
-        h1.imprimir();
     }
     
     /*
