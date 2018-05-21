@@ -41,6 +41,10 @@ public class DatosCliente extends javax.swing.JFrame{
     public static String tipoPerecedero;
     public static String tipoNoPerecedero;
     
+    //tiempo minimo y maximo de atencion
+    public static int tiempoMinimo;
+    public static int tiempoMaximo;
+    
     //constructores
     public DatosCliente(){
        initComponents();
@@ -51,6 +55,8 @@ public class DatosCliente extends javax.swing.JFrame{
         initComponents();
         tipoPerecedero=tipoP;
         tipoNoPerecedero=tipoNP;
+        tiempoMinimo= Integer.parseInt(MinimoTiempo);
+        tiempoMaximo= Integer.parseInt(MaximoTiempo);
         /**
          * Los labels y los botones se muestran dependiendo de cuantas ventanas se hayan solicitado
          */
