@@ -226,7 +226,7 @@ public class Interfaz_inicio extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         contadorVentanasNP= Integer.parseInt(CantidadVentanasNP.getText());
         contadorVentanasP= Integer.parseInt(CantidadVentanasP.getText());
-        DatosCliente dt = new DatosCliente(tipoVentanaP,tipoVentanaNP,contadorVentanasP,contadorVentanasNP);
+        DatosCliente dt = new DatosCliente(tipoVentanaP,tipoVentanaNP,contadorVentanasP,contadorVentanasNP,MinimoTextField.getText(),MaximoTextField.getText());
         dt.setVisible(true);
         dt.setTitle("Control de entregas");
     }//GEN-LAST:event_jButton4ActionPerformed
