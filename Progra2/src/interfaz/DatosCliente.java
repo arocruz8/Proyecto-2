@@ -183,6 +183,23 @@ public class DatosCliente extends javax.swing.JFrame{
         colaFichas.agregar(prioridad, f);
     }
     
+    public void tiempoEspera(){
+        int num;
+        num=(int)(Math.random()*(tiempoMaximo-tiempoMinimo+1)+tiempoMinimo);
+        int tiempo=num*100;
+        try{
+            if(colaSeguridad.estaVacia()==false){
+                cliente info=(cliente) colaSeguridad.desacolar();
+                JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre());
+                Thread.sleep(tiempo);
+                JOptionPane.showMessageDialog(null,"Atendido");
+            }
+        }
+        catch(Exception e){
+            
+        }
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -222,7 +239,7 @@ public class DatosCliente extends javax.swing.JFrame{
         Ventana1NPLabel = new javax.swing.JLabel();
         panel3 = new java.awt.Panel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         panel4 = new java.awt.Panel();
         jLabel4 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -560,29 +577,35 @@ public class DatosCliente extends javax.swing.JFrame{
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Control de seguridad");
 
-        jButton1.setText("Generar claves de seguridad");
+        jButton4.setText("Atender");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel3Layout = new javax.swing.GroupLayout(panel3);
         panel3.setLayout(panel3Layout);
         panel3Layout.setHorizontalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel3Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3))
+                    .addGroup(panel3Layout.createSequentialGroup()
+                        .addGap(207, 207, 207)
+                        .addComponent(jButton4)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
         );
         panel3Layout.setVerticalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
+                .addGap(116, 116, 116)
+                .addComponent(jButton4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -775,7 +798,6 @@ public class DatosCliente extends javax.swing.JFrame{
                         .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(48, Short.MAX_VALUE))
                     .addGroup(panel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1053,6 +1075,10 @@ public class DatosCliente extends javax.swing.JFrame{
         colaFichas.imprimir();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        tiempoEspera();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
         private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
         Xcliente.getCantM();
@@ -1120,9 +1146,9 @@ public class DatosCliente extends javax.swing.JFrame{
     private javax.swing.JLabel Ventana2PLabel;
     private javax.swing.JLabel Ventana3NPLabel;
     private javax.swing.JLabel Ventana3PLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
