@@ -5,10 +5,10 @@ import colas_prioridad.*;
 import javax.swing.JOptionPane;
 
 public class DatosCliente extends javax.swing.JFrame{ 
-        
+    
+    //objetos para trabajar en la progra
     cliente Xcliente= new cliente();
     ficha Xficha= new ficha();
-    
     
     ColaPrioridad c1 = new ColaPrioridad();
     ColaPrioridad c2 = new ColaPrioridad();
@@ -105,6 +105,11 @@ public class DatosCliente extends javax.swing.JFrame{
         }
     }
     
+    /*
+    Este metodo agrega dependiendo del tipo de estructura que el usuario haya seleccionado 
+    en la configuración inicial y una vez los datos se hayan llenado en datos clientes se tomara,
+    el tipo de paquete que resgistro para añadirlo a la estructura correspondiente
+    */
     public void agregarDatos(){
         cliente data = new cliente();
         nombre=jTextNombre.getText();
@@ -137,6 +142,11 @@ public class DatosCliente extends javax.swing.JFrame{
        
     }
     
+    /*
+    Lo que hace este método es imprimir en consola los datos que se van agregando 
+    en cada una de las estructuras por lo que el usurio podra ver como va aumentando 
+    el tamaño de cada estructura
+    */
     public void mostrar(){
         c1.imprimir();
         c2.imprimir();
@@ -145,6 +155,11 @@ public class DatosCliente extends javax.swing.JFrame{
         colaSeguridad.imprimir();
     }
     
+    /*
+    Este metodo se encarga de usar las variables globales tipo_paquete y tipo_usuario,
+    para ingresarlas en el objeto f que es de la clas ficha para generarla posteriormente
+    f obtendra si el codigo y que tipo de paquete ingreso para agregarlo a la cola de fichas
+    */
     public void generarficha(){
         ficha f =new ficha(tipoPaquete, tipoUsuario);
         tipoPaquete = tipo_paquete;
