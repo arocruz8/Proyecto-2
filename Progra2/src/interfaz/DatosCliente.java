@@ -1105,7 +1105,10 @@ public class DatosCliente extends javax.swing.JFrame{
         int r;
         r=X.contadorVentanasNP+X.contadorVentanasP;
     }//GEN-LAST:event_TotalVentanasLabActionPerformed
-
+/**
+ * El boton actualiza las estadisticas de varios totales y ventanas
+ * @param evt 
+ */
     private void ActualizarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarBotonActionPerformed
         String modificador;
         modificador=Integer.toString(totalAdultoMayor);
