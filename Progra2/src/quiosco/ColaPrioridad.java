@@ -27,7 +27,11 @@ public class ColaPrioridad<cliente>{
         return this.frente.getSiguiente().getPrioridad();
     }  
     
-    //agrega en la cola
+    /*
+    agrega en la cola dependiendo de la prioridad que haya ingresado el usuario,
+    con el respectivo dato del cliente(su información), además de comparar dependiendo
+    de la prioridad ingresda para añadirlo en la cola que tenga la misma prioridad
+    */
     public void agregar(int prioridad, cliente elemento) {
         if (prioridad == 0) {
             System.out.println("No se puede tener una prioridad 0");
@@ -59,7 +63,9 @@ public class ColaPrioridad<cliente>{
             }
     }
    
-    //eliminar
+    /*
+    El método elimina según la cola que este en el frente 
+    */
     public cliente desacolar(){
         if (this.estaVacia()){
             System.out.println("La cola esta vacia.");

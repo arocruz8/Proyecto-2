@@ -1,7 +1,6 @@
 package quiosco;
 import estructurasDatos.*;
 
-
 public class heapClientes extends cliente{
     private paqueteInfoCliente[] heap;
     private int tamañoHeap;
@@ -35,7 +34,8 @@ public class heapClientes extends cliente{
         return tamañoHeap;
     }
     
-    //función que agrega a la cola de los paquetes
+    /*función que agrega a la cola de los paquetes 
+    comprando la prioridad que tengan*/
    public void añadir(cliente data, int prioridad){
         paqueteInfoCliente nuevoPaquete = new paqueteInfoCliente(data, prioridad);
         
@@ -50,7 +50,9 @@ public class heapClientes extends cliente{
     }
     
     
-    //función que elimina el paquete 
+    /*función que elimina el paquete se encarga de revisar el tamaño del heap
+    de buscar la prioridad y dependiendo si la cola tiene más de un elemento
+    compara el padre con el hijo para asi ir sacando el elemento que se desea*/ 
     public paqueteInfoCliente eliminar(){
         int padre;
         int hijo;

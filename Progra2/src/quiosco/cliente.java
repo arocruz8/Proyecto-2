@@ -116,7 +116,6 @@ public class cliente{
         }
     }
     
-    
     //to string
     @Override
     public String toString() {

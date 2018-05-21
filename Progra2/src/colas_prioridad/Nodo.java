@@ -14,7 +14,8 @@ public class Nodo<cliente> {
         this.siguiente = null;
     }
     
-    public void serPrioridad(int prioridad){
+    //métodos set y get
+    public void setPrioridad(int prioridad){
         this.prioridad=prioridad;    
     }
     

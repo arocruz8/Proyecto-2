@@ -1,5 +1,6 @@
 package quiosco;
 public class Nodo<cliente> {
+    //atributos de la clase
     private cliente dato;
     private int prioridad;
     private Nodo<cliente> anterior;
@@ -14,6 +15,7 @@ public class Nodo<cliente> {
         this.siguiente = null;
     }
     
+    //métodos set y get
     public void serPrioridad(int prioridad){
         this.prioridad=prioridad;    
     }
