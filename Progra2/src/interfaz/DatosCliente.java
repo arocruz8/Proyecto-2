@@ -47,7 +47,7 @@ public class DatosCliente extends javax.swing.JFrame{
     }
     
     
-    public DatosCliente(String tipoP, String tipoNP, int contadorP, int contadorNP) {
+    public DatosCliente(String tipoP, String tipoNP, int contadorP, int contadorNP,String MinimoTiempo,String MaximoTiempo) {
         initComponents();
         tipoPerecedero=tipoP;
         tipoNoPerecedero=tipoNP;
