@@ -25,7 +25,6 @@ public class Interfaz_inicio extends javax.swing.JFrame {
     public void setTipoVentanaNP(String tipoVentanaNP) {
         this.tipoVentanaNP = tipoVentanaNP;
     }
-    //HOLALALALALALA////
     
     public Interfaz_inicio() {
         initComponents();
@@ -240,7 +239,10 @@ public class Interfaz_inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * Se crea nueva ventana principal
+ * @param evt 
+ */
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         contadorVentanasNP= Integer.parseInt(CantidadVentanasNP.getText());
         contadorVentanasP= Integer.parseInt(CantidadVentanasP.getText());
