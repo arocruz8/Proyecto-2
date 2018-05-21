@@ -45,6 +45,8 @@ public class DatosCliente extends javax.swing.JFrame{
     //tiempo minimo y maximo de atencion
     public static int tiempoMinimo;
     public static int tiempoMaximo;
+    public static int cantidadColaSeguridad;
+    public static int tiempoTotal=0;
     
     //constructores
     public DatosCliente(){
@@ -157,8 +159,6 @@ public class DatosCliente extends javax.swing.JFrame{
     public void mostrar(){
         c1.imprimir();
         c2.imprimir();
-        System.out.println(h1.tamañoArreglo());
-        System.out.println(h2.tamañoArreglo());
         colaSeguridad.imprimir();
     }
     
@@ -187,6 +187,8 @@ public class DatosCliente extends javax.swing.JFrame{
         int num;
         num=(int)(Math.random()*(tiempoMaximo-tiempoMinimo+1)+tiempoMinimo);
         int tiempo=num*100;
+        tiempoTotal=tiempoTotal+tiempo;
+        cantidadColaSeguridad++;
         try{
             if(colaSeguridad.estaVacia()==false){
                 cliente info=(cliente) colaSeguridad.desacolar();
@@ -198,6 +200,11 @@ public class DatosCliente extends javax.swing.JFrame{
         catch(Exception e){
             
         }
+    }
+    
+    public int tiempoPromedio(){
+        int promedio=tiempoTotal/cantidadColaSeguridad;
+        return promedio;
     }
     
     @SuppressWarnings("unchecked")
