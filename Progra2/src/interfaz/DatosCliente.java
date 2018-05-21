@@ -9,6 +9,7 @@ public class DatosCliente extends javax.swing.JFrame{
     //objetos para trabajar en la progra
     cliente Xcliente= new cliente();
     ficha Xficha= new ficha();
+    Interfaz_inicio X= new Interfaz_inicio();
     
     ColaPrioridad c1 = new ColaPrioridad();
     ColaPrioridad c2 = new ColaPrioridad();
@@ -1090,6 +1091,15 @@ public class DatosCliente extends javax.swing.JFrame{
         // TODO add your handling code here:
     }                                            
 
+    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+        colaFichas.getFrente();
+    }     
+     
+    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+        colaSeguridad.getFrente();
+    }                     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAdultoMayor;
