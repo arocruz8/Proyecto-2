@@ -1,16 +1,20 @@
 package interfaz;
 import quiosco.*;
 import estructurasDatos.*;
-import colas_prioridad.*;
 import javax.swing.JOptionPane;
 
 public class DatosCliente extends javax.swing.JFrame{ 
     
-    //objetos para trabajar en la progra
+    /*
+    objetos para trabajar en la progra
+    */
     cliente Xcliente= new cliente();
     ficha Xficha= new ficha();
     Interfaz_inicio X= new Interfaz_inicio();
     
+    /*
+    colas a utilizar
+    */
     ColaPrioridad c1 = new ColaPrioridad();
     ColaPrioridad c2 = new ColaPrioridad();
     heap h2 = new heap(20);
@@ -19,18 +23,24 @@ public class DatosCliente extends javax.swing.JFrame{
     ColaPrioridad colaSeguridad= new ColaPrioridad();
     ColaPrioridad colaFichas = new ColaPrioridad();
     
-    //atributos clientes
+    /*
+    atributos clientes
+    */
     public static String nombre;
     public static String correo;
     public static String tipo_usuario;
     public static String tipo_paquete;
     public static int prioridad;
     
-    //atributos ficha
+    /*
+    atributos ficha
+    */
     public static String tipoPaquete;
     public static String tipoUsuario;
     
-    //contadores
+    /*
+    contadores
+    */
     public static int totalDiscapacidad;
     public static int totalEmbarazadas;
     public static int totalRegulares;
@@ -38,17 +48,23 @@ public class DatosCliente extends javax.swing.JFrame{
     public static int totalPerecederos;
     public static int totalNoPerecederos;
     
-    //cola
+    /*
+    los tipos que van a ser las ventanas de perecedero y no perecedero
+    */
     public static String tipoPerecedero;
     public static String tipoNoPerecedero;
     
-    //tiempo minimo y maximo de atencion
+    /*
+    tiempo minimo y maximo de atencion
+    */
     public static int tiempoMinimo;
     public static int tiempoMaximo;
     public static int cantidadColaSeguridad;
     public static int tiempoTotal=0;
     
-    //constructores
+    /*
+    constructores
+    */
     public DatosCliente(){
        initComponents();
     }
@@ -123,8 +139,6 @@ public class DatosCliente extends javax.swing.JFrame{
         cliente data = new cliente();
         nombre=jTextNombre.getText();
         correo=jTextCorreo.getText();
-        //tipo_usuario=jTextUsuario.getText();
-        //tipo_paquete=jTextPaquete.getText();
         
         data.setNombre(nombre);
         data.setCorreo(correo);
@@ -134,6 +148,9 @@ public class DatosCliente extends javax.swing.JFrame{
 
         int priority = prioridad;
         
+        /*
+        Si el paquete que se desea agregar es un perecedero se agrega a c1 o a h1 y si es no perecedero se agrega a c2 y h2
+        */
         if("P".equals(tipo_paquete)){
             if("cola".equals(tipoPerecedero)){
                 c1.agregar(priority, data);
@@ -183,16 +200,25 @@ public class DatosCliente extends javax.swing.JFrame{
         colaFichas.agregar(prioridad, f);
     }
     
+    /*
+    Este método determina el tiempo que se va a tomar atendiendo un paquete en la cola de seguridad
+    */
     public void tiempoEspera(){
         int num;
         num=(int)(Math.random()*(tiempoMaximo-tiempoMinimo+1)+tiempoMinimo);
         int tiempo=num*100;
+        /**
+         * Se suma el tiempo que se va a durar atendiendo al cliente al total para sacar el promedio y se suma uno a la cantidadColaSeguridad
+         */
         tiempoTotal=tiempoTotal+tiempo;
         cantidadColaSeguridad++;
         try{
             if(colaSeguridad.estaVacia()==false){
                 cliente info=(cliente) colaSeguridad.desacolar();
                 JOptionPane.showMessageDialog(null,"Atendiendo a "+info.getNombre());
+                /**
+                 * Se hace un sleep por el tiempo generado en el random 
+                 */
                 Thread.sleep(tiempo);
                 JOptionPane.showMessageDialog(null,"Atendido");
             }
@@ -202,6 +228,10 @@ public class DatosCliente extends javax.swing.JFrame{
         }
     }
     
+    /**
+     * Metodo que calcula el tiempo promedio que se dura en la cola seguridad
+     * @return 
+     */
     public int tiempoPromedio(){
         int promedio=tiempoTotal/cantidadColaSeguridad;
         return promedio;
@@ -893,6 +923,10 @@ public class DatosCliente extends javax.swing.JFrame{
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void BotonVentana1PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVentana1PActionPerformed
+        /**
+         * Se hacen los cambios del boton de atender en la ventana, se extrae al cliente de la cola o el heap
+         * dependiendo de lo que se haya configurado y se agrega el cliente a la cola de seguridad
+         */
         if("P".equals(tipo_paquete)){
             if("cola".equals(tipoPerecedero)){
                 if(c1.estaVacia()==false){
